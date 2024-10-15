@@ -1,0 +1,222 @@
+/* Основные стили */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f1f6f9; /* Светло-голубой фон */
+    color: #333;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #7a5c3f; /* Цвет дерева */
+    color: #fff;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #f8f4e3; /* Светлый оттенок для логотипа */
+}
+
+.header-image {
+    flex-grow: 1;
+    text-align: center;
+}
+
+.banner-img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Основная структура */
+.container {
+    display: flex;
+    padding: 20px;
+}
+
+aside.filters {
+    width: 20%;
+    padding-right: 20px;
+    background-color: #e2d1c3; /* Светло-коричневый тон для фона фильтров */
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.filters h2 {
+    margin-bottom: 15px;
+    font-size: 20px;
+    color: #7a5c3f; /* Древесный тон заголовков */
+}
+
+.filters ul {
+    list-style: none;
+    padding: 0;
+}
+
+.filters li {
+    margin-bottom: 10px;
+}
+
+.filters input[type="checkbox"] {
+    margin-right: 10px;
+}
+
+main.content {
+    width: 80%;
+    padding-left: 20px;
+}
+
+/* Категории */
+.category {
+    margin-bottom: 40px;
+    background-color: #f8f4e3; /* Светлый древесный фон категорий */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.category h2 {
+    margin-bottom: 15px;
+    font-size: 22px;
+    color: #2c5d6b; /* Темно-голубой для заголовков категорий */
+}
+
+/* Прокрутка карточек для блоков "Топ" и "Рекомендуемое" */
+.scroll-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    background-color: #f8f4e3;
+    border-radius: 10px;
+}
+
+.cards-wrapper {
+    display: flex;
+    gap: 15px;
+    overflow-x: scroll;
+    padding: 10px;
+    scroll-behavior: smooth;
+}
+
+.scroll-btn {
+    position: absolute;
+    background-color: #7a5c3f; /* Тон кнопок прокрутки */
+    color: #fff;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 1;
+    border-radius: 50%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease;
+}
+
+.scroll-btn:hover {
+    background-color: #5c3f2b;
+}
+
+.left-btn {
+    left: 10px;
+}
+
+.right-btn {
+    right: 10px;
+}
+
+/* Карточки */
+.card {
+    min-width: 220px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    text-align: center;
+    transition: transform 0.2s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.card img {
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.card h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #2c5d6b; /* Тёмно-голубой цвет заголовков карточек */
+}
+
+.card p {
+    margin: 5px 0;
+    color: #666;
+}
+
+/* Сетка для блока "Остальное" */
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 20px;
+}
+
+/* Стили для футера */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #7a5c3f; /* Тёмно-коричневый фон футера */
+    color: #fff;
+}
+
+/* Адаптивность */
+@media (max-width: 1200px) {
+    .container {
+        flex-direction: column;
+    }
+
+    aside.filters {
+        width: 100%;
+        padding: 0;
+        margin-bottom: 20px;
+    }
+
+    main.content {
+        width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .scroll-btn {
+        padding: 5px;
+    }
+
+    .card {
+        min-width: 180px;
+    }
+}
+
+@media (max-width: 480px) {
+    .banner-img {
+        height: 200px;
+        object-fit: cover;
+    }
+
+    .cards-grid {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    }
+
+    .card {
+        min-width: 150px;
+    }
+}
