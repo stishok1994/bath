@@ -5,26 +5,64 @@ body {
     padding: 0;
     background-color: #f1f6f9; /* Светло-голубой фон */
     color: #333;
+    justify-content: center;
 }
 
+/* Стиль для контейнера хедера */
 header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px;
-    background-color: #7a5c3f; /* Цвет дерева */
-    color: #fff;
+    position: relative;
+    height: 100%; /* Высота блока */
+    background-image: 
+        linear-gradient(rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 1) 100%), /*Градиент сверху вниз*/
+        url('/img/header_backgr2.jpg'); /* Путь к изображению */
+    background-size: cover; /* Изображение заполняет блок */
+    background-position: center; /* Центрируем изображение */
+    background-repeat: no-repeat; /* Изображение не повторяется */
+    overflow: hidden; /* Чтобы элементы не выходили за пределы блока */
 }
 
+/* Псевдоэлемент для затемнения фонового изображения */
+header::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    /* background: rgba(236, 232, 232, 0.1); Легкое затемнение */
+    z-index: 1; /* Слой затемнения позади контента */
+}
+
+/* Контент внутри хедера */
+.header-content {
+    display: flex; /* Flexbox для горизонтального расположения */
+    align-items: center; /* Вертикальное выравнивание по центру */
+    justify-content: center; /* Центрирование заголовка по горизонтали */
+    position: relative;
+    z-index: 2; /* Контент поверх псевдоэлемента */
+    padding: 10px;
+    height: 100%; /* Занимает полную высоту контейнера */
+}
+
+/* Логотип слева */
 .logo {
     font-size: 24px;
-    font-weight: bold;
-    color: #f8f4e3; /* Светлый оттенок для логотипа */
+    font-weight: bold; /* Жирный текст для логотипа */
+    color: #f00909; /* Цвет текста логотипа (деревянный тон) */
+    position: absolute;
+    left: 20px; /* Располагаем логотип слева */
 }
 
-.header-image {
-    flex-grow: 1;
-    text-align: center;
+/* Заголовок по центру */
+.header-title {
+    font-size: 44px; /* Размер заголовка */
+    font-weight: bold; /* Жирный заголовок */
+    color: hsl(140, 4%, 13%); /* Цвет текста заголовка (голубой тон) */
+    text-align: center; /* Центрируем текст */
+    font-family: "Neucha", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    margin: 0;
 }
 
 .banner-img {
@@ -34,10 +72,21 @@ header {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
+.top-title,
+.recomend-title,
+.others-title {
+    color: hsl(140, 4%, 13%); /* Цвет текста заголовка (голубой тон) */
+    text-align: center; /* Центрируем текст */
+    font-family: "Neucha", sans-serif;
+}
+
 /* Основная структура */
 .container {
     display: flex;
     padding: 20px;
+    max-width: 1400px;
+    justify-content: center;
+    margin: 0 auto;
 }
 
 aside.filters {
@@ -68,8 +117,9 @@ aside.filters {
 }
 
 main.content {
-    width: 80%;
+    width: 75%;
     padding-left: 20px;
+    padding-right: 20px;
 }
 
 /* Категории */
@@ -83,7 +133,7 @@ main.content {
 
 .category h2 {
     margin-bottom: 15px;
-    font-size: 22px;
+    font-size: 36px;
     color: #2c5d6b; /* Темно-голубой для заголовков категорий */
 }
 
@@ -179,6 +229,11 @@ footer {
     color: #fff;
 }
 
+/* Отступы */
+.m-0 {
+    margin: 0;
+}
+
 /* Адаптивность */
 @media (max-width: 1200px) {
     .container {
@@ -203,6 +258,15 @@ footer {
 
     .card {
         min-width: 180px;
+    }
+    .header-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .logo {
+        position: static;
+        margin-bottom: 10px;
     }
 }
 
