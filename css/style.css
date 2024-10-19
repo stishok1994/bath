@@ -14,7 +14,7 @@ header {
     height: 100%; /* Высота блока */
     background-image: 
         linear-gradient(rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 1) 100%), /*Градиент сверху вниз*/
-        url('/img/header_backgr2.jpg'); /* Путь к изображению */
+        url('header_backgr2.jpg'); /* Путь к изображению */
     background-size: cover; /* Изображение заполняет блок */
     background-position: center; /* Центрируем изображение */
     background-repeat: no-repeat; /* Изображение не повторяется */
