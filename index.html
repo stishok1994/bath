@@ -3,77 +3,582 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style.css">
     <title>Document</title>
+        <!-- Bootstrap -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.18/dist/css/bootstrap-select.min.css">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+        <!-- My scc -->
+        <link rel="stylesheet" href="css/style.css">
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Neucha&display=swap" rel="stylesheet">
+        <!-- icon -->
+        <script src="https://kit.fontawesome.com/5a4a530fa7.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <header>
         <div class="header-content">
             <div class="logo">Логотип</div>
-            <div class="header-title">
-                <h1 class="m-0">Лютый пар</h1>
+            <div class="">
+                <h1 class="header-title m-0">Лютый пар</h1>
             </div>
         </div>
     </header>
 
     <div class="container">
-        <aside class="filters">
+
+        <!-- Mobile filters Botton filter left -->
+        <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasFilters" aria-labelledby="offcanvasFiltersLabel">
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title" id="offcanvasFiltersLabel">Фильтры</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div id="filterBlockMobile" class="offcanvas-body">
+                    <form>
+    
+                        <!-- Город -->
+                        <div class="form-group mb-3">
+                            <label for="citySelect"><i class="fa-solid fa-location-dot"></i> Ваш город</label>
+                            <select id="citySelect" class="form-control">
+                                <option selected>Воронеж</option>
+                                <option>Тамбов</option>
+                            </select>
+                        </div>
+    
+                        <!-- Район -->
+                        <div class="form-group btm_border">
+                            <label for="districtSelect"><i class="fa-solid fa-thumbtack"></i> Район</label>
+                            <select id="districtSelect" class="form-control">
+                                <option>Все районы</option>
+                                <option>Центральный</option>
+                                <option>Коминтерновский</option>
+                                <option>Ленинский</option>
+                                <option>Советский</option>
+                                <option>Левобережный</option>
+                                <option>Железнодорожный</option>
+                            </select>
+                        </div>
+        
+                        <!-- Тип парной -->
+                        <div class="form-group btm_border">
+                            <label for="saunaType">Тип парной</label>
+                            <div id="saunaType" class="ml-10">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="sauna" value="Сауна">
+                                    <label class="form-check-label" for="sauna">
+                                        Сауна
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="hamam" value="Хамам">
+                                    <label class="form-check-label" for="hamam">
+                                        Хамам
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="bania" value="Баня">
+                                    <label class="form-check-label" for="bania">
+                                        Баня
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="inf_bania" value="Инфракрасная">
+                                    <label class="form-check-label" for="inf_bania">
+                                        Инфракрасная
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="bania_procat" value="Бани на прокат">
+                                    <label class="form-check-label" for="bania_procat">
+                                        Бани на прокат
+                                    </label>
+                                </div>
+                            </div>
+    
+                        </div>
+    
+                        <!-- Тип Бани -->
+                        <div class="form-group btm_border">
+                            <label for="banyaType">Тип бани</label>
+                            <div id="banyaType" class="ml-10">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="russia_bania" value="Русская">
+                                    <label class="form-check-label" for="russia_bania">
+                                        Русская
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="finn_bania" value="Финская">
+                                    <label class="form-check-label" for="finn_bania">
+                                        Финская
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="drova_bania" value="На дровах">
+                                    <label class="form-check-label" for="drova_bania">
+                                        На дровах
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="common_bania" value="Общественная">
+                                    <label class="form-check-label" for="common_bania">
+                                        Общественная
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+    
+                        <!-- Цена -->
+                        <div class="form-group btm_border">
+                            <label for="priceRange1"><i class="fa-regular fa-money-bill-1"></i> Цена (₽/час): <span class="priceValue">5000</span> ₽</label>
+                            <input type="range" class="form-range priceRange" id="priceRange1" min="500" max="10000" step="100" value="5000">
+                            <div class="d-flex justify-content-between">
+                                <small>500 ₽</small>
+                                <small>10000 ₽</small>
+                            </div>
+                        </div>
+        
+                        <!-- Вместимость -->
+                        <div class="form-group btm_border">
+                            <label for="capacityInput1"><i class="fa-solid fa-people-arrows"></i> Вместимость (человек)</label>
+                            <input type="number" class="form-control input_piple_block" id="capacityInput1" placeholder="Введите число" min="1" max="100">
+                        </div>
+        
+                        <!-- Аквазона -->
+                        <div class="form-group btm_border">
+                            <label for="aquaZone"><i class="fa-solid fa-water"></i> Аквазона</label>
+                            <div class="dropdown">
+                                <button class="btn btn-secondary dropdown-toggle change_in_list_filter" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Выбрать категории
+                                </button>
+                                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                    <li><label class="dropdown-item"><input type="checkbox" value="Бассейн"> Бассейн</label></li>
+                                    <li><label class="dropdown-item"><input type="checkbox" value="Нет бассейна"> Нет бассейна</label></li>
+                                    <li><label class="dropdown-item"><input type="checkbox" value="Ледяной бассейн"> Ледяной бассейн</label></li>
+                                    <li><label class="dropdown-item"><input type="checkbox" value="Теплый бассейн"> Теплый бассейн</label></li>
+                                    <li><label class="dropdown-item"><input type="checkbox" value="Купель"> Купель</label></li>
+                                    <li><label class="dropdown-item"><input type="checkbox" value="Джакузи"> Джакузи</label></li>
+                                    <li><label class="dropdown-item"><input type="checkbox" value="Душ"> Душ</label></li>
+                                    <li><label class="dropdown-item"><input type="checkbox" value="Гидромассаж"> Гидромассаж</label></li>
+                                    <li><label class="dropdown-item"><input type="checkbox" value="Чан"> Чан</label></li>
+                                    <li><label class="dropdown-item"><input type="checkbox" value="Горка"> Горка</label></li>
+                                    <li><label class="dropdown-item"><input type="checkbox" value="Противоток"> Противоток</label></li>
+                                    <li><label class="dropdown-item"><input type="checkbox" value="Гейзер"> Гейзер</label></li>
+                                    <li><label class="dropdown-item"><input type="checkbox" value="Водопад"> Водопад</label></li>
+                                    <li><label class="dropdown-item"><input type="checkbox" value="Подсветка"> Подсветка</label></li>
+                                    <li><label class="dropdown-item"><input type="checkbox" value="Ушат"> Ушат</label></li>
+                                    <li><label class="dropdown-item"><input type="checkbox" value="Выход к реке/озеру"> Выход к реке/озеру</label></li>
+                                    <li><label class="dropdown-item"><input type="checkbox" value="Фитобочка"> Фитобочка</label></li>
+                                    <li><label class="dropdown-item"><input type="checkbox" value="Сауна с морской водой"> Сауна с морской водой</label></li>
+                                </ul>
+                            </div>
+                        </div>
+        
+                        <!-- Сервис -->
+                        <div class="form-group btm_border">
+                            <label for="service"><i class="fa-solid fa-hand-peace"></i> Сервис</label>
+                            <div class="dropdown">
+                                <button class="btn btn-secondary dropdown-toggle change_in_list_filter" type="button" id="dropdownServiceButton" data-bs-toggle="dropdown" aria-expanded="false">
+                                     Выбрать сервисы
+                                </button>
+                                <ul class="dropdown-menu" aria-labelledby="dropdownServiceButton">
+                                    <li><label class="dropdown-item"><input type="checkbox" value="Бильярд"> Бильярд</label></li>
+                                    <li><label class="dropdown-item"><input type="checkbox" value="Пул"> Пул</label></li>
+                                    <li><label class="dropdown-item"><input type="checkbox" value="Караоке"> Караоке</label></li>
+                                    <li><label class="dropdown-item"><input type="checkbox" value="Аэрохоккей"> Аэрохоккей</label></li>
+                                    <li><label class="dropdown-item"><input type="checkbox" value="Настольные игры"> Настольные игры</label></li>
+                                    <li><label class="dropdown-item"><input type="checkbox" value="Настольный футбол"> Настольный футбол</label></li>
+                                    <li><label class="dropdown-item"><input type="checkbox" value="Настольный теннис"> Настольный теннис</label></li>
+                                    <li><label class="dropdown-item"><input type="checkbox" value="Нарды"> Нарды</label></li>
+                                    <li><label class="dropdown-item"><input type="checkbox" value="Карты"> Карты</label></li>
+                                    <li><label class="dropdown-item"><input type="checkbox" value="Дартс"> Дартс</label></li>
+                                    <li><label class="dropdown-item"><input type="checkbox" value="Шахматы"> Шахматы</label></li>
+                                </ul>
+                            </div>
+                        </div>
+    
+                        <!-- Услуги -->
+                        <div class="form-group btm_border">
+                            <label for="services"><i class="fa-solid fa-ranking-star"></i> Услуги</label>
+                            <div class="dropdown">
+                                <button class="btn btn-secondary dropdown-toggle change_in_list_filter" type="button" id="dropdownServicesButton" data-bs-toggle="dropdown" aria-expanded="false">
+                                     Выбрать услуги
+                                </button>
+                                <ul class="dropdown-menu" aria-labelledby="dropdownServicesButton">
+                                    <li><label class="dropdown-item"><input type="checkbox" value="Авторское парение"> Авторское парение</label></li>
+                                    <li><label class="dropdown-item"><input type="checkbox" value="Услуги банщика"> Услуги банщика</label></li>
+                                    <li><label class="dropdown-item"><input type="checkbox" value="Массаж"> Массаж</label></li>
+                                    <li><label class="dropdown-item"><input type="checkbox" value="Кальян"> Кальян</label></li>
+                                    <li><label class="dropdown-item"><input type="checkbox" value="Кухня"> Кухня</label></li>
+                                    <li><label class="dropdown-item"><input type="checkbox" value="СПА процедуры"> СПА процедуры</label></li>
+                                    <li><label class="dropdown-item"><input type="checkbox" value="Корпоративные вечера"> Корпоративные вечера</label></li>
+                                    <li><label class="dropdown-item"><input type="checkbox" value="Новогодняя ночь"> Новогодняя ночь</label></li>
+                                    <li><label class="dropdown-item"><input type="checkbox" value="Рождественские встречи"> Рождественские встречи</label></li>
+                                </ul>
+                            </div>
+                        </div>
+            
+                        <!-- Парковка -->
+                        <div class="form-check mb-2">
+                            <input type="checkbox" class="form-check-input" id="parkingCheck">
+                            <label class="form-check-label" for="parkingCheck">Парковка</label>
+                        </div>
+            
+                        <!-- Мангал -->
+                        <div class="form-check mb-2">
+                            <input type="checkbox" class="form-check-input" id="bbqCheck">
+                            <label class="form-check-label" for="bbqCheck">Мангал</label>
+                        </div>
+    
+                        <!-- Банкетный зал -->
+                        <div class="form-check mb-2">
+                            <input type="checkbox" class="form-check-input" id="banquet_hall">
+                            <label class="form-check-label" for="banquet_hall">Банкетный зал</label>
+                        </div>
+    
+                        <!-- Еда с собой -->
+                        <div class="form-check mb-3">
+                            <input type="checkbox" class="form-check-input" id="take_food">
+                            <label class="form-check-label" for="take_food">Еда с собой</label>
+                        </div>
+    
+                        <!-- Применить фильтры -->
+                        <div class="d-flex justify-content-center mb-3">
+                            <button id="applyFiltersMobile" type="submit" class="btn btn-primary btn_add_filters no-background-change">Применить фильтры</button>
+                        </div>
+
+                        <!-- Сбросить фильтры -->
+                        <div class="d-flex justify-content-center mb-3">
+                            <button type="submit" class="btn btn-primary btn_clr_filters no-background-change">Сбросить фильтры</button>
+                        </div>
+    
+                        <!-- services -->
+                        <div class="block_margin_t_b d-flex justify-content-center mb-3">
+                            <a href="#" class="block_cursor">
+                                <i class="fa-solid fa-clipboard-user"></i>
+                                <h2>Услуги</h2>
+                            </a>
+                        </div>
+    
+                        <!-- delivery -->
+                        <div class="block_margin_t_b d-flex justify-content-center mb-3">
+                            <a href="#" class="block_cursor">
+                                <i class="fa-solid fa-truck"></i>
+                                <h2>Доставка</h2></p>
+                            </a>
+                        </div>
+    
+                        <!-- discount -->
+                        <div class="block_margin_t_b d-flex justify-content-center mb-3">
+                            <a href="#" class="block_cursor">
+                                <i class="fa-solid fa-tag"></i>
+                                <h2>Акции и скидки</h2>
+                            </a>
+                        </div>
+                        
+                        <!-- contact -->
+                        <div class="block_margin_t_b d-flex justify-content-center mb-3 row">
+                            <div class="col-4 d-flex justify-content-center"> <i class="fa-brands fa-whatsapp icon-contact block_cursor" style="color: #25cb28;"></i></div>
+                            <div class="col-4 d-flex justify-content-center"> <i class="fa-brands fa-telegram icon-contact block_cursor" style="color: #2470f5;"></i></div>
+                            <div class="col-4 icon-contact d-flex justify-content-center"> <i class="fa-brands fa-vk icon-contact block_cursor" style="color: #0443ae;"></i></div>
+                        </div>
+    
+                    </form>
+                </div>
+
+        </div>
+
+
+        <!-- Кнопка для открытия боковой панели на малых экранах -->
+        <button class="btn btn-secondary d-md-none btn_open_filters mb-3" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasFilters" aria-controls="offcanvasFilters">
+            <i class="fa-solid fa-bars"></i> Фильтр
+        </button>
+
+
+        <!-- Desktop Filters -->
+        <aside class="filters card_filter d-none d-md-block">
             <h2>Фильтры</h2>
-            <ul>
-                <li><input type="checkbox"> Фильтр 1</li>
-                <li><input type="checkbox"> Фильтр 2</li>
-                <li><input type="checkbox"> Фильтр 3</li>
-                <li><input type="checkbox"> Фильтр 4</li>
-            </ul>
+            <div id="filterBlockDesktop" class="card_filter filter-container">
+                <form>
+                    <!-- City -->
+                    <div class="form-group mb-3">
+                        <label for="citySelect"><i class="fa-solid fa-location-dot"></i> Ваш город</label>
+                        <select id="citySelect" class="form-control">
+                            <option selected>Воронеж</option>
+                            <option>Тамбов</option>
+                        </select>
+                    </div>
+                    <!-- Район -->
+                    <div class="form-group btm_border">
+                        <label for="districtSelect"><i class="fa-solid fa-thumbtack"></i> Район</label>
+                        <select id="districtSelect" class="form-control">
+                            <option>Все районы</option>
+                            <option>Центральный</option>
+                            <option>Коминтерновский</option>
+                            <option>Ленинский</option>
+                            <option>Советский</option>
+                            <option>Левобережный</option>
+                            <option>Железнодорожный</option>
+                        </select>
+                    </div>
+
+                    <!-- Тип парной -->
+                    <div class="form-group btm_border">
+                        <label for="saunaType">Тип парной</label>
+                        <div class="ml-10" id="saunaType">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="sauna" value="Сауна">
+                                <label class="form-check-label" for="sauna">
+                                    Сауна
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="hamam" value="Хамам">
+                                <label class="form-check-label" for="hamam">
+                                    Хамам
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="bania" value="Баня">
+                                <label class="form-check-label" for="bania">
+                                    Баня
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="inf_bania" value="Инфракрасная">
+                                <label class="form-check-label" for="inf_bania">
+                                    Инфракрасная
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="bania_procat" value="Бани на прокат">
+                                <label class="form-check-label" for="bania_procat">
+                                    Бани на прокат
+                                </label>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- Тип Бани -->
+                    <div class="form-group btm_border">
+                        <label for="banyaType">Тип бани</label>
+                        <div id="banyaType" class="ml-10">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="russia_bania" value="Русская">
+                                <label class="form-check-label" for="russia_bania">
+                                    Русская
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="finn_bania" value="Финская">
+                                <label class="form-check-label" for="finn_bania">
+                                    Финская
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="drova_bania" value="На дровах">
+                                <label class="form-check-label" for="drova_bania">
+                                    На дровах
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="common_bania" value="Общественная">
+                                <label class="form-check-label" for="common_bania">
+                                    Общественная
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Цена -->
+                    <div class="form-group btm_border">
+                        <label for="priceRange2"><i class="fa-regular fa-money-bill-1"></i> Цена (₽/час): <span class="priceValue">5000</span> ₽</label>
+                        <input type="range" class="form-range priceRange" id="priceRange2" min="500" max="10000" step="100" value="5000">
+                        <div class="d-flex justify-content-between">
+                            <small>500 ₽</small>
+                            <small>10000 ₽</small>
+                        </div>
+                    </div>
+        
+                    <!-- Вместимость -->
+                    <div class="form-group btm_border">
+                        <label for="capacityInput2"><i class="fa-solid fa-people-arrows"></i> Вместимость (человек)</label>
+                        <input type="number" class="form-control input_piple_block" id="capacityInput2" placeholder="Введите число" min="1" max="100">
+                    </div>
+        
+                    <!-- Аквазона -->
+                    <div class="form-group btm_border">
+                        <label for="aquaZone"><i class="fa-solid fa-water"></i> Аквазона</label>
+                        <div class="dropdown">
+                            <button class="btn btn-secondary dropdown-toggle change_in_list_filter" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                                Выбрать категории
+                            </button>
+                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                <li><label class="dropdown-item"><input type="checkbox" value="Бассейн"> Бассейн</label></li>
+                                <li><label class="dropdown-item"><input type="checkbox" value="Нет бассейна"> Нет бассейна</label></li>
+                                <li><label class="dropdown-item"><input type="checkbox" value="Ледяной бассейн"> Ледяной бассейн</label></li>
+                                <li><label class="dropdown-item"><input type="checkbox" value="Теплый бассейн"> Теплый бассейн</label></li>
+                                <li><label class="dropdown-item"><input type="checkbox" value="Купель"> Купель</label></li>
+                                <li><label class="dropdown-item"><input type="checkbox" value="Джакузи"> Джакузи</label></li>
+                                <li><label class="dropdown-item"><input type="checkbox" value="Душ"> Душ</label></li>
+                                <li><label class="dropdown-item"><input type="checkbox" value="Гидромассаж"> Гидромассаж</label></li>
+                                <li><label class="dropdown-item"><input type="checkbox" value="Чан"> Чан</label></li>
+                                <li><label class="dropdown-item"><input type="checkbox" value="Горка"> Горка</label></li>
+                                <li><label class="dropdown-item"><input type="checkbox" value="Противоток"> Противоток</label></li>
+                                <li><label class="dropdown-item"><input type="checkbox" value="Гейзер"> Гейзер</label></li>
+                                <li><label class="dropdown-item"><input type="checkbox" value="Водопад"> Водопад</label></li>
+                                <li><label class="dropdown-item"><input type="checkbox" value="Подсветка"> Подсветка</label></li>
+                                <li><label class="dropdown-item"><input type="checkbox" value="Ушат"> Ушат</label></li>
+                                <li><label class="dropdown-item"><input type="checkbox" value="Выход к реке/озеру"> Выход к реке/озеру</label></li>
+                                <li><label class="dropdown-item"><input type="checkbox" value="Фитобочка"> Фитобочка</label></li>
+                                <li><label class="dropdown-item"><input type="checkbox" value="Сауна с морской водой"> Сауна с морской водой</label></li>
+                            </ul>
+                        </div>
+                    </div>
+        
+                    <!-- Сервис -->
+                    <div class="form-group btm_border">
+                        <label for="service"><i class="fa-solid fa-hand-peace"></i>  Сервис</label>
+                        <div class="dropdown">
+                            <button class="btn btn-secondary dropdown-toggle change_in_list_filter" type="button" id="dropdownServiceButton" data-bs-toggle="dropdown" aria-expanded="false">
+                                Выбрать сервисы
+                            </button>
+                            <ul class="dropdown-menu" aria-labelledby="dropdownServiceButton">
+                                <li><label class="dropdown-item"><input type="checkbox" value="Бильярд"> Бильярд</label></li>
+                                <li><label class="dropdown-item"><input type="checkbox" value="Пул"> Пул</label></li>
+                                <li><label class="dropdown-item"><input type="checkbox" value="Караоке"> Караоке</label></li>
+                                <li><label class="dropdown-item"><input type="checkbox" value="Аэрохоккей"> Аэрохоккей</label></li>
+                                <li><label class="dropdown-item"><input type="checkbox" value="Настольные игры"> Настольные игры</label></li>
+                                <li><label class="dropdown-item"><input type="checkbox" value="Настольный футбол"> Настольный футбол</label></li>
+                                <li><label class="dropdown-item"><input type="checkbox" value="Настольный теннис"> Настольный теннис</label></li>
+                                <li><label class="dropdown-item"><input type="checkbox" value="Нарды"> Нарды</label></li>
+                                <li><label class="dropdown-item"><input type="checkbox" value="Карты"> Карты</label></li>
+                                <li><label class="dropdown-item"><input type="checkbox" value="Дартс"> Дартс</label></li>
+                                <li><label class="dropdown-item"><input type="checkbox" value="Шахматы"> Шахматы</label></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Услуги -->
+                    <div class="form-group btm_border">
+                        <label for="services"><i class="fa-solid fa-ranking-star"></i> Услуги</label>
+                        <div class="dropdown">
+                            <button class="btn btn-secondary dropdown-toggle change_in_list_filter" type="button" id="dropdownServicesButton" data-bs-toggle="dropdown" aria-expanded="false">
+                                Выбрать услуги
+                            </button>
+                            <ul class="dropdown-menu" aria-labelledby="dropdownServicesButton">
+                                <li><label class="dropdown-item"><input type="checkbox" value="Авторское парение"> Авторское парение</label></li>
+                                <li><label class="dropdown-item"><input type="checkbox" value="Услуги банщика"> Услуги банщика</label></li>
+                                <li><label class="dropdown-item"><input type="checkbox" value="Массаж"> Массаж</label></li>
+                                <li><label class="dropdown-item"><input type="checkbox" value="Кальян"> Кальян</label></li>
+                                <li><label class="dropdown-item"><input type="checkbox" value="Кухня"> Кухня</label></li>
+                                <li><label class="dropdown-item"><input type="checkbox" value="СПА процедуры"> СПА процедуры</label></li>
+                                <li><label class="dropdown-item"><input type="checkbox" value="Корпоративные вечера"> Корпоративные вечера</label></li>
+                                <li><label class="dropdown-item"><input type="checkbox" value="Новогодняя ночь"> Новогодняя ночь</label></li>
+                                <li><label class="dropdown-item"><input type="checkbox" value="Рождественские встречи"> Рождественские встречи</label></li>
+                            </ul>
+                        </div>
+                    </div>
+        
+                    <!-- Парковка -->
+                    <div class="form-check mb-2">
+                        <input type="checkbox" class="form-check-input" id="parkingCheck">
+                        <label class="form-check-label" for="parkingCheck">Парковка</label>
+                    </div>
+        
+                    <!-- Мангал -->
+                    <div class="form-check mb-2">
+                        <input type="checkbox" class="form-check-input" id="bbqCheck">
+                        <label class="form-check-label" for="bbqCheck">Мангал</label>
+                    </div>
+
+                    <!-- Банкетный зал -->
+                    <div class="form-check mb-2">
+                        <input type="checkbox" class="form-check-input" id="banquet_hall">
+                        <label class="form-check-label" for="banquet_hall">Банкетный зал</label>
+                    </div>
+
+                    <!-- Еда с собой -->
+                    <div class="form-check mb-3">
+                        <input type="checkbox" class="form-check-input" id="take_food">
+                        <label class="form-check-label" for="take_food">Еда с собой</label>
+                    </div>
+                    
+                    <!-- add filter -->
+                    <div class="d-flex justify-content-center mb-3">
+                        <button type="submit" id="applyFiltersDesktop" class="btn btn-primary btn_add_filters no-background-change">Применить фильтры</button>
+                    </div>
+
+                    <!-- Clr фильтры -->
+                    <div class="d-flex justify-content-center mb-3">
+                        <button type="submit" class="btn btn-primary btn_clr_filters no-background-change">Сбросить фильтры</button>
+                    </div>
+
+                    <!-- services -->
+                    <div class="block_margin_t_b d-flex justify-content-center mb-3">
+                        <a href="#" class="block_cursor">
+                            <i class="fa-solid fa-clipboard-user"></i>
+                            <h2>Услуги</h2>
+                        </a>
+                    </div>
+
+                    <!-- delivery -->
+                    <div class="block_margin_t_b d-flex justify-content-center mb-3">
+                        <a href="#" class="block_cursor">
+                            <i class="fa-solid fa-truck"></i>
+                            <h2>Доставка</h2></p>
+                        </a>
+                    </div>
+
+                    <!-- discount -->
+                    <div class="block_margin_t_b d-flex justify-content-center mb-3">
+                        <a href="#" class="block_cursor">
+                            <i class="fa-solid fa-tag"></i>
+                            <h2>Акции и скидки</h2>
+                        </a>
+                    </div>
+
+                    <!-- contact -->
+                    <div class="block_margin_t_b d-flex justify-content-center mb-3 row">
+                        <div class="col-4 d-flex justify-content-center"> <i class="fa-brands fa-whatsapp icon-contact block_cursor" style="color: #25cb28;"></i></div>
+                        <div class="col-4 d-flex justify-content-center"> <i class="fa-brands fa-telegram icon-contact block_cursor" style="color: #2470f5;"></i></div>
+                        <div class="col-4 icon-contact d-flex justify-content-center"> <i class="fa-brands fa-vk icon-contact block_cursor" style="color: #0443ae;"></i></div>
+                    </div>
+                </form>
+            </div>
+
+            <aside class="ads-sidebar">
+                <h2>Реклама</h2>
+                <div class="ad-card">
+                    <img src="path/to/ad1.jpg" alt="Реклама 1">
+                    <p>Рекламная кампания 1</p>
+                </div>
+                <div class="ad-card">
+                    <img src="path/to/ad2.jpg" alt="Реклама 2">
+                    <p>Рекламная кампания 2</p>
+                </div>
+                <div class="ad-card">
+                    <img src="path/to/ad3.jpg" alt="Реклама 3">
+                    <p>Рекламная кампания 3</p>
+                </div>
+            </aside>
         </aside>
 
+        <!-- CONTENT -->
         <main class="content">
-            <!-- Block Топ -->
+            <!-- img block -->
+             <div class="img-top_block d-flex justify-content-center mb-3">
+                <img class="img_top" src="img/logo.jpg" alt="">
+             </div>
+            <!-- Block Top -->
             <section class="category top">
                 <h2 class="top-title">Топ</h2>
                 <div class="scroll-container">
                     <button class="scroll-btn left-btn">&lt;</button>
-                    <div class="cards-wrapper">
+                    <div id="topBlock" class="top_content cards-wrapper">
                         <!-- Карточки -->
-                        <div class="card">
-                            <img src="path/to/banya1.jpg" alt="Баня 1">
-                            <h3>Баня 1</h3>
-                            <p>Цена: 2000 ₽/час</p>
-                            <p>Вместимость: 6 человек</p>
-                            <p>Адрес: ул. Лесная, 5</p>
-                        </div>
-                        <div class="card">
-                            <img src="path/to/banya1.jpg" alt="Баня 1">
-                            <h3>Баня 1</h3>
-                            <p>Цена: 2000 ₽/час</p>
-                            <p>Вместимость: 6 человек</p>
-                            <p>Адрес: ул. Лесная, 5</p>
-                        </div>
-                        <div class="card">
-                            <img src="path/to/banya1.jpg" alt="Баня 1">
-                            <h3>Баня 1</h3>
-                            <p>Цена: 2000 ₽/час</p>
-                            <p>Вместимость: 6 человек</p>
-                            <p>Адрес: ул. Лесная, 5</p>
-                        </div>
-                        <div class="card">
-                            <img src="path/to/banya1.jpg" alt="Баня 1">
-                            <h3>Баня 1</h3>
-                            <p>Цена: 2000 ₽/час</p>
-                            <p>Вместимость: 6 человек</p>
-                            <p>Адрес: ул. Лесная, 5</p>
-                        </div>
-                        <div class="card">
-                            <img src="path/to/banya1.jpg" alt="Баня 1">
-                            <h3>Баня 1</h3>
-                            <p>Цена: 2000 ₽/час</p>
-                            <p>Вместимость: 6 человек</p>
-                            <p>Адрес: ул. Лесная, 5</p>
-                        </div>
 
                         <!-- Добавьте другие карточки -->
                     </div>
@@ -81,129 +586,41 @@
                 </div>
             </section>
 
-            <!-- Block Рекомендуемое -->
+            <!-- Block Recomend -->
             <section class="category recommended">
                 <h2 class="recomend-title">Рекомендуемое</h2>
                 <div class="scroll-container">
                     <button class="scroll-btn left-btn">&lt;</button>
-                    <div class="cards-wrapper">
+                    <div class="recomend_content cards-wrapper">
                         <!-- Карточки -->
-                        <div class="card">
-                            <img src="path/to/banya5.jpg" alt="Баня 5">
-                            <h3>Баня 5</h3>
-                            <p>Цена: 2100 ₽/час</p>
-                            <p>Вместимость: 6 человек</p>
-                            <p>Адрес: ул. Парковая, 15</p>
-                        </div>
-                        <div class="card">
-                            <img src="path/to/banya5.jpg" alt="Баня 5">
-                            <h3>Баня 5</h3>
-                            <p>Цена: 2100 ₽/час</p>
-                            <p>Вместимость: 6 человек</p>
-                            <p>Адрес: ул. Парковая, 15</p>
-                        </div>
-                        <div class="card">
-                            <img src="path/to/banya5.jpg" alt="Баня 5">
-                            <h3>Баня 5</h3>
-                            <p>Цена: 2100 ₽/час</p>
-                            <p>Вместимость: 6 человек</p>
-                            <p>Адрес: ул. Парковая, 15</p>
-                        </div>
-                        <div class="card">
-                            <img src="path/to/banya5.jpg" alt="Баня 5">
-                            <h3>Баня 5</h3>
-                            <p>Цена: 2100 ₽/час</p>
-                            <p>Вместимость: 6 человек</p>
-                            <p>Адрес: ул. Парковая, 15</p>
-                        </div>
-                        <div class="card">
-                            <img src="path/to/banya5.jpg" alt="Баня 5">
-                            <h3>Баня 5</h3>
-                            <p>Цена: 2100 ₽/час</p>
-                            <p>Вместимость: 6 человек</p>
-                            <p>Адрес: ул. Парковая, 15</p>
-                        </div>
-                        <!-- Добавьте другие карточки -->
+
+                    
                     </div>
                     <button class="scroll-btn right-btn">&gt;</button>
                 </div>
             </section>
 
-            <!-- Block Остальное -->
+            <!-- Block Others -->
             <section class="category others">
                 <h2 class="others-title">Остальное</h2>
-                <div class="cards-grid">
+                <div class="cards-box row blok-others-cards" id="bathsContainer">
                     <!-- Карточки -->
-                    <div class="card">
-                        <img src="path/to/banya9.jpg" alt="Баня 9">
-                        <h3>Баня 9</h3>
-                        <p>Цена: 1900 ₽/час</p>
-                        <p>Вместимость: 5 человек</p>
-                        <p>Адрес: ул. Горная, 9</p>
-                    </div>
-                    <div class="card">
-                        <img src="path/to/banya9.jpg" alt="Баня 9">
-                        <h3>Баня 9</h3>
-                        <p>Цена: 1900 ₽/час</p>
-                        <p>Вместимость: 5 человек</p>
-                        <p>Адрес: ул. Горная, 9</p>
-                    </div>
-                    <div class="card">
-                        <img src="path/to/banya9.jpg" alt="Баня 9">
-                        <h3>Баня 9</h3>
-                        <p>Цена: 1900 ₽/час</p>
-                        <p>Вместимость: 5 человек</p>
-                        <p>Адрес: ул. Горная, 9</p>
-                    </div>
-                    <div class="card">
-                        <img src="path/to/banya9.jpg" alt="Баня 9">
-                        <h3>Баня 9</h3>
-                        <p>Цена: 1900 ₽/час</p>
-                        <p>Вместимость: 5 человек</p>
-                        <p>Адрес: ул. Горная, 9</p>
-                    </div>
-                    <div class="card">
-                        <img src="path/to/banya9.jpg" alt="Баня 9">
-                        <h3>Баня 9</h3>
-                        <p>Цена: 1900 ₽/час</p>
-                        <p>Вместимость: 5 человек</p>
-                        <p>Адрес: ул. Горная, 9</p>
-                    </div>
-                    <div class="card">
-                        <img src="path/to/banya9.jpg" alt="Баня 9">
-                        <h3>Баня 9</h3>
-                        <p>Цена: 1900 ₽/час</p>
-                        <p>Вместимость: 5 человек</p>
-                        <p>Адрес: ул. Горная, 9</p>
-                    </div>
-                    <div class="card">
-                        <img src="path/to/banya9.jpg" alt="Баня 9">
-                        <h3>Баня 9</h3>
-                        <p>Цена: 1900 ₽/час</p>
-                        <p>Вместимость: 5 человек</p>
-                        <p>Адрес: ул. Горная, 9</p>
-                    </div>
-                    <!-- Добавьте остальные карточки -->
+
+                    <!-- <div class="col-6 col-md-4 col-lg-3 mb-4">
+                        <div class="card">
+                            <img src="" alt="" class="bath-image">
+                            <h3>Моя баня</h3>
+                            <p><i class="fa-solid fa-coins" aria-hidden="true"></i> Цена: 350 ₽/час</p>
+                            <p><i class="fa-solid fa-people-arrows" aria-hidden="true"></i> Вместимость: 30 человек</p>
+                            <p><i class="fa-solid fa-map-location" aria-hidden="true"></i> Адрес: Улица Грамши 82</p>
+                        </div>
+                    </div> -->
+
                 </div>
+
             </section>
 
         </main>
-
-        <aside class="ads-sidebar">
-            <h2>Реклама</h2>
-            <div class="ad-card">
-                <img src="path/to/ad1.jpg" alt="Реклама 1">
-                <p>Рекламная кампания 1</p>
-            </div>
-            <div class="ad-card">
-                <img src="path/to/ad2.jpg" alt="Реклама 2">
-                <p>Рекламная кампания 2</p>
-            </div>
-            <div class="ad-card">
-                <img src="path/to/ad3.jpg" alt="Реклама 3">
-                <p>Рекламная кампания 3</p>
-            </div>
-        </aside>
 
 
     </div>
@@ -211,7 +628,20 @@
     <footer>
         <p>&copy; 2024 Агрегатор бань. Все права защищены.</p>
     </footer>
-
+    <!-- bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.18/dist/js/bootstrap-select.min.js"></script>
+    <!-- My js -->
+        <!-- scroll cart -->
     <script src="js/scrollCart.js"></script>
+        <!-- show price -->
+    <script src="js/show_price.js"></script>
+        <!-- filter -->
+    <script src="js/filter.js"></script>
+        <!-- get content -->
+    <script src="js/getContent.js"></script>
+
+
+    
 </body>
 </html>
