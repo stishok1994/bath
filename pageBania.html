@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+        <!-- Bootstrap -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.18/dist/css/bootstrap-select.min.css">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+        
+        
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css" rel="stylesheet">
+        
+        <!-- My scc -->
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/pageBania.css">
+        <!-- Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Neucha&display=swap" rel="stylesheet">
+        <!-- icon -->
+        <script src="https://kit.fontawesome.com/5a4a530fa7.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <div class="logo">Логотип</div>
+            <div class="">
+                <h1 class="header-title m-0">Лютый пар</h1>
+            </div>
+        </div>
+    </header>
+
+
+        <!-- CONTENT -->
+         <div class="container2">
+            <main class="category pl-10">
+                <a class="link-home" href="index.html"><div class="link-home_text">Главная</div></a>
+                <h1 class="name_bania text-center"></h1>
+        
+                <div class="row">
+    
+    
+                <div class="col-md-6 block_photo_top">
+                            <!-- Блок для прокрутки фотографий -->
+                    <div id="photoCarousel" class="carousel slide" data-ride="carousel">
+                        
+                        <div class="carousel-inner">
+                            <!-- Фотографии в слайдере -->
+                            <!-- <div class="carousel-item active">
+                                <a href="img/1.jpeg" data-lightbox="gallery">
+                                    <img src="img/1.jpeg" class="img-bania_top d-block w-100" alt="Фото 1">
+                                </a>
+                            </div> -->
+        
+                        </div>
+                        <!-- Стрелки навигации -->
+                        <a class="carousel-control-prev" href="#photoCarousel" role="button" data-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Предыдущая</span>
+                        </a>
+                        <a class="carousel-control-next" href="#photoCarousel" role="button" data-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Следующая</span>
+                        </a>
+                    </div>
+                </div>
+    
+    
+                    <div class="col-md-5">
+                        <h3>Информация о бане</h3>
+                        <p><strong >Вид парной: </strong> <span class="type_bania"></span></p>
+                        <p><strong >Тип парной: </strong><span class="subtype_bania"> </span></p>
+                        <p><strong >Вместимость: </strong><span class="capacity"></span> </p>
+                        <p><strong>Цена: </strong><span class="price"></span></p>
+                        <p><strong>Адрес: </strong><span class="adress"> </span> </p>
+                    </div>
+                </div>
+                <!-- aqua zone -->
+                <div class="row">
+                    <div class="col-6">
+                        <h3 class="title_category"><i class="fa-solid fa-water"></i> Аквазона</h3>
+                        <ul class="aqua_zone_block">
+                            <li></li>
+                        </ul>
+                    </div>
+                    <!-- service1 -->
+                    <div class="col-6">
+                        <h3 class="title_category"><i class="fa-solid fa-hand-peace"></i> Сервис</h3>
+                        <ul class="entertainment_block">
+                            <li></li>
+        
+                        </ul>
+                    </div>
+                    <!-- service -->
+                    <div class="col-6">
+                        <h3 class="title_category"><i class="fa-solid fa-ranking-star"></i> Услуги</h3>
+                        <ul class="services_block">
+                            <li></li>
+                        </ul>
+                    </div>
+                    <!-- price -->
+                    <div class="col-10 col-md-6">
+                        <h3 class="title_category"><i class="fa-regular fa-money-bill-1"></i> Стоимость</h3>
+                        <p class="rent_block"></p>
+                    </div>
+
+                    <!-- information -->
+                    <div class="col-10">
+                        <h3 class="title_category"><i class="fa-regular fa-lightbulb"></i> Информация</h3>
+                        <p class="description_block"></p>
+                    </div>
+                    <!-- phone -->
+                    <div class="col-4">
+                        <h3 class="title_category"><i class="fa-solid fa-phone-volume"></i> Контактный телефон</h3>
+                        <p class="phone_block"><strong></strong></p>
+                    </div>
+                    <!-- dop info -->
+                    <div>
+                        <h3 class="title_category">Дополнительная информация</h3>
+                        <ul class="add_info_block">
+                            <li></li>
+                        </ul>
+                    </div>
+                </div>       
+                <!-- image galary -->
+                <div class="title_category">
+                    <h2 class="text-center">Фотогалерея</h2>
+                    
+                    <!-- Галерея фотографий -->
+                    <div class="container row gallery d-flex justify-content-center">
+                        <!-- Каждое изображение открывается в режиме Lightbox и добавляется к одной галерее с помощью атрибута data-lightbox="gallery-set" -->
+                        
+                        <!-- <div class="col-lg-3 col-md-4 col-sm-6">
+                            <a href="img/1.jpeg" data-lightbox="gallery-set">
+                                <img src="img/1.jpeg" alt="Фото 1">
+                            </a>
+                        </div> -->
+                        
+                    </div>
+                </div>
+    
+        </main>
+         </div>
+
+
+
+
+
+
+
+
+    <footer>
+        <p>&copy; 2024 Агрегатор бань. Все права защищены.</p>
+    </footer>
+    <!-- bootstrap -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
+
+
+    <!-- My js -->
+    <script src="js/getInfoCard.js"></script>
+    
+</body>
+</html>

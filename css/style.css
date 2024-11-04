@@ -1,6 +1,7 @@
 /* Основные стили */
 body {
-    font-family: 'Arial', sans-serif;
+    /* font-family: 'Arial', sans-serif; */
+    font-family: "Nunito", sans-serif;
     margin: 0;
     padding: 0;
     background-color: #f1f6f9; 
@@ -34,6 +35,118 @@ header::before {
     z-index: 1; /* Слой затемнения позади контента */
 }
 
+.header_mobile {
+    display: none;
+    position: relative;
+    height: 100%; /* Высота блока */
+    background-image: 
+        linear-gradient(rgba(255, 255, 255, 0.61) 50%, rgba(255, 255, 255, 1) 100%), 
+        url('/img/header_backgr2.jpg'); 
+    background-size: cover; /* Изображение заполняет блок */
+    background-position: center; /* Центрируем изображение */
+    background-repeat: no-repeat; /* Изображение не повторяется */
+    overflow: hidden; /* Чтобы элементы не выходили за пределы блока */
+    z-index: 100;
+}
+.block_nav_mobile {
+    background-color: rgb(red, green, blue)
+}
+.locat_text_nav {
+font-size: 14px;
+    color: hsl(140, 4%, 13%);
+    font-style: italic;
+    text-decoration: underline;
+}
+
+
+
+/* nav блок */
+.button-container {
+    display: none;
+    flex-direction: column;
+    align-items: flex-start; /* Выравнивание по левому краю */
+}
+
+
+.additional-buttons {
+    width: 100%; /* Занимает всю доступную ширину */
+}
+
+.button-row {
+    display: flex; /* Группировка кнопок в ряд */
+    justify-content: space-between; /* Распределение кнопок по доступной ширине */
+    width: 100%; /* Занимает всю ширину контейнера */
+    margin-bottom: 10px; /* Отступ между рядами */
+}
+
+.button-row:last-child {
+    justify-content: flex-start; /* Выровнять вторую строку кнопок влево */
+}
+
+.fixed-width {
+    width: 120px !important; /* Задание фиксированной ширины для кнопок "О нас" и "Собственникам" */
+    margin-right: 10px; /* Отступ между кнопками, если необходимо */
+}
+
+.button-row:last-child .fixed-width:last-child {
+    margin-right: 0; /* Удаление правого отступа у последней кнопки */
+}
+
+.btn_flex {
+    flex: 1; /* Адаптивная ширина для первой строки кнопок */
+    margin-right: 10px; /* Отступ между кнопками */
+}
+
+
+/* Удаление отступа у последней кнопки в первой строке */
+.button-row:first-child .btn:last-child {
+    margin-right: 0;
+}
+
+.btn_nav {
+    padding: 5px;
+    font-size: 14px;
+    border: #713303;
+}
+.btn_color2 {
+    background-color: #D8B394; /* Светлый древесный цвет */
+    background-image: linear-gradient(135deg, #D8B394 0%, #B59A7E 100%); /* Градиентный фон */
+    border: none; /* Убираем границу */
+    color: hsl(120, 9%, 2%) !important; /* Цвет текста */
+    padding: 3px 3px; /* Отступ внутри кнопки */
+    border-radius: 5px; /* Округлые края */
+    font-size: 14px; /* Размер шрифта */
+    font-weight: bold; /* Жирный шрифт */
+    cursor: pointer; /* Указатель при наведении */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Плавные переходы для эффектов */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Легкая тень */
+        
+}
+.btn_color3 {
+    background-color: #e3613a; /* Светлый древесный цвет */
+    background-image: linear-gradient(135deg, #dc621b 0%, #ed6708 100%); /* Градиентный фон */
+}
+.btn_color2:hover {
+    background-image: linear-gradient(135deg, #B59A7E 0%, #D8B394 100%); /* Изменение градиента при наведении */
+    transform: translateY(-2px); /* Небольшое поднятие кнопки при наведении */
+    box-shadow: 0 6px 9px rgba(0, 0, 0, 0.2); /* Более выраженная тень при наведении */
+}
+
+.btn_color2:focus {
+    outline: none; /* Убираем обводку */
+}
+
+.btn_color2.btn-secondary {
+    background-color: #B57A61; /* Темный древесный цвет для вторичных кнопок */
+    background-image: linear-gradient(135deg, #B57A61 0%, #8C5B4D 100%); /* Градиент для вторичных кнопок */
+}
+
+.btn_color2.btn-secondary:hover {
+    background-image: linear-gradient(135deg, #8C5B4D 0%, #B57A61 100%); /* Изменение градиента для вторичных кнопок при наведении */
+}
+
+
+
 /* Контент внутри хедера */
 .header-content {
     display: flex; /* Flexbox для горизонтального расположения */
@@ -41,7 +154,7 @@ header::before {
     justify-content: center; /* Центрирование заголовка по горизонтали */
     position: relative;
     z-index: 2; /* Контент поверх псевдоэлемента */
-    padding: 10px;
+    padding: 20px 40px;
     height: 100%; /* Занимает полную высоту контейнера */
 }
 
@@ -56,14 +169,11 @@ header::before {
 
 /* Заголовок по центру */
 .header-title {
-    font-size: 46px; /* Размер заголовка */
-    font-weight: bold; /* Жирный заголовок */
-    color: hsl(140, 4%, 13%); /* Цвет текста заголовка (голубой тон) */
-    text-align: center; /* Центрируем текст */
+    margin-bottom: 10px;
+    font-size: 2.5rem;
     font-family: "Neucha", sans-serif;
-    font-weight: 400;
-    font-style: normal;
-    margin: 0;
+    font-weight: bold;
+    color: hsl(140, 4%, 13%); 
 }
 .select_tow_title {
     margin: 5px !important;
@@ -91,7 +201,7 @@ header::before {
     padding: 20px;
     max-width: 1400px;
     justify-content: center;
-    margin: 0 auto;
+    margin: 10px auto;
 }
 
 .img_top {
@@ -136,7 +246,7 @@ main.content {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-.category .others {
+.category.others {
     margin-bottom: 40px;
     background-color: #f8f4e3;
     padding: 20px;
@@ -194,20 +304,39 @@ main.content {
 .right-btn {
     right: 10px;
 }
+.img-top_block {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+.show_mobile {
+    display: none;
+}
+.icon-contact_my {
+    font-size: 32px !important;
+}
+.main_block {
+   padding: 0 20px 10px; 
+}
+
+
 
 /* Карточки */
 .card {
-    background-color: #fff;
+    /* background-color: #fff; */
+    background-color: transparent;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    padding: 10px;
+    padding: 3px;
+    /* padding: 0; */
     text-align: center;
     transition: transform 0.2s ease-in-out, box-shadow 0.3s ease-in-out;
     height: 100%;
+    
 }
 
 .others .card {
-    background-color: #fff;
+    /* background-color: #fff; */
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     padding: 5px;
@@ -289,6 +418,16 @@ main.content {
     width: 300px;
 }
 
+.cooperat_blok,
+.about_our_block {
+    background-color: #358c3b;
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 5px 0px;
+    border-radius: 5px;
+}
+
 /*  */
 .card img {
     width: 100%;
@@ -299,7 +438,7 @@ main.content {
 
 .card h3 {
     font-size: 18px;
-    margin-bottom: 10px;
+    margin-bottom: 5px;
     color: #2c5d6b; /* Тёмно-голубой цвет заголовков карточек */
 }
 
@@ -326,6 +465,7 @@ main.content {
 }
 .icon-contact {
     font-size: 3rem;
+    padding: 0 10px;
 }
 
     /*  */
@@ -392,6 +532,18 @@ h2 {
 .ml-10 {
     margin-left: 10px;
 }
+.mt-0 {
+    margin-top: 0;
+}
+.p-0 {
+    padding: 0;
+}
+.mr-15 {
+    margin-right: 15px;
+}
+.m_auto {
+    margin: auto;
+}
 
 /* Адаптивность */
 
@@ -444,8 +596,62 @@ h2 {
     }
 
     .card p {
-        font-size: 13px;
+        font-size: 12px;
     }
+    .hide_show_mobile {
+        display: none;
+    }
+    .show_mobile {
+        display: flex;
+        justify-content: center;
+        padding: 0 10px;
+    }
+
+
+    .header-title {
+        margin-bottom: 5px;
+        font-size: 32px;
+    }
+    .header_mobile {
+        display: block;
+    }
+    .button-container {
+        display: flex;
+    }
+    main.content {
+        width: 100%;
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+    .main_block {
+        padding: 0 5px 5px 5px; 
+     }
+    .card h3 {
+        margin-bottom: 0;
+        font-size: 16px;
+    }
+    .m-3_low {
+        margin-left: 5px;
+        margin-right: 5px;
+    }
+    .category.others {
+        padding-left: 3px;
+        padding-right: 3px;
+    }
+    .category h2 {
+        margin-bottom: 10px;
+        font-size: 26px;
+    }
+    .category {
+        margin-bottom: 15px;
+        padding-left: 3px;
+        padding-right: 3px;
+    }
+    .category {
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+
 }
 
 @media (max-width: 580px) {
@@ -460,6 +666,9 @@ h2 {
     .block_cursor h2 {
         font-size: 18px;
     }
+    .hide_show_mobile {
+        display: none;
+    }
 
 }
 
@@ -471,6 +680,9 @@ h2 {
 
     .card p {
         font-size: 13px;
+    }
+    .hide_show_mobile {
+        display: none;
     }
 
 }

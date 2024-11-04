@@ -1,28 +1,32 @@
 // Получаем весь список бань
 
 // URL для бань Воронежа
-const apiUrl = 'http://90.156.208.220:8880/catalog/?city=Воронеж';
+// const apiUrl = 'http://90.156.208.220:8880/catalog/?city=Воронеж';
+const apiUrl = 'https://all-baths.tw1.ru/catalog/'
 
 // Функция для создания карточки на основе данных
 function createBathCard(bath) {
     // Создаем блок col с классами для адаптивности
     const colDiv = document.createElement("div");
-    colDiv.className = "col-6 col-md-4 col-lg-3 mb-4";
+    colDiv.className = "col-6 col-md-4 col-lg-3 mb-4 p_low";
 
     // Создаем основную карточку
     const cardDiv = document.createElement("div");
-    cardDiv.className = "card";
+    cardDiv.className = "card flip-in-ver-right";
 
     // Добавляем скрытое поле ID
     const idField = document.createElement("p");
     idField.style.display = "none";
+    idField.className="id-card";
     idField.textContent = bath.id;
+    cardDiv.setAttribute("onclick", `openCard(${bath.id})`);
 
     // Создаем и добавляем элементы карточки
     const img = document.createElement("img");
     img.className = "bath-image";
     img.src = bath.images[0] // || "путь_к_запасному_изображению";
     img.alt = bath.name;
+    console.log(bath.images[0])
 
     const title = document.createElement("h3");
     title.textContent = bath.name;
@@ -30,8 +34,8 @@ function createBathCard(bath) {
     const price = document.createElement("p");
     price.innerHTML = `<i class="fa-solid fa-coins" aria-hidden="true"></i> Цена: ${bath.price} ₽/час`;
 
-    const capacity = document.createElement("p");
-    capacity.innerHTML = `<i class="fa-solid fa-people-arrows" aria-hidden="true"></i> Вместимость: <br> ${bath.capacity} человек`;
+    // const capacity = document.createElement("p");
+    // capacity.innerHTML = `<i class="fa-solid fa-people-arrows" aria-hidden="true"></i> Вместимость: <br> ${bath.capacity} человек`;
 
     const address = document.createElement("p");
     address.innerHTML = `<i class="fa-solid fa-map-location" aria-hidden="true"></i> Адрес: ${bath.full_address}`;
@@ -41,7 +45,7 @@ function createBathCard(bath) {
     cardDiv.appendChild(img);
     cardDiv.appendChild(title);
     cardDiv.appendChild(price);
-    cardDiv.appendChild(capacity);
+    // cardDiv.appendChild(capacity);
     cardDiv.appendChild(address);
 
     // Вставляем карточку в col

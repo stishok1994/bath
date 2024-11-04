@@ -1,0 +1,145 @@
+body {
+    /* font-family: 'Arial', sans-serif; */
+    font-family: "Nunito", sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f1f6f9;
+    color: #1e1d1d;
+}
+.container2 {
+    /* display: flex; */
+    padding: 20px;
+    max-width: 1300px;
+    justify-content: center;
+    margin: 10px auto;
+}
+
+h1 {
+    margin-bottom: 40px;
+    font-weight: bold;
+    font-size: 2.5rem;
+    font-family: "Neucha", sans-serif;
+}
+
+h3 {
+    margin-top: 30px;
+    text-decoration: none;
+    color: hsl(140, 4%, 13%);
+    font-family: "Neucha", sans-serif;
+}
+.subtype_text {
+    font-family: "Neucha", sans-serif;;
+}
+
+.carousel-inner img {
+    height: 400px; /* Задайте нужную высоту для изображений */
+}
+
+ul {
+    padding-left: 20px;
+}
+
+.container {
+    margin-bottom: 30px;
+}
+.content {
+    background-color: #f8f4e3;
+    border-radius: 10px;
+}
+.link-home {
+    display: inline-block; /* Устанавливаем отображение как встроенный блочный элемент */
+    padding: 5px 10px; /* Добавляем немного отступов для удобства */
+    color: hsl(140, 4%, 13%);
+    background-color: #e2d1c3;
+    text-decoration: none; /* Убираем подчеркивание текста */
+    border-radius: 5px; /* Закругляем углы */
+    transition: background-color 0.3s; /* Плавный переход цвета фона */
+    font-family: "Neucha", sans-serif;
+}
+
+.link-home:hover {
+    background-color: #e68734c5; /* Цвет фона при наведении */
+    text-decoration: none; /* Убираем подчеркивание текста */
+    color: hsl(140, 4%, 13%);
+    font-family: "Neucha", sans-serif;
+}
+
+.link-home_text {
+    font-size: 1.2rem; /* Размер шрифта */
+}
+.block_photo_top {
+    max-width: 576px;
+}
+
+
+/* Для галереи */
+.carousel img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+.gallery img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+.img-bania_top {
+    width: auto;
+}
+
+@media (max-width: 1400px) {
+    h1 {
+        font-size: 32px;
+    }
+    h2 {
+        font-size: 28px;
+    }
+    h3 {
+        font-size: 24px !important;
+    }
+    .aqua_zone_block p,
+    .entertainment_block p,
+    .services_block p,
+    .rent_block,
+    .description_block
+    .phone_block,
+    .add_info_block {
+        font-size: 16px;
+        margin-bottom: 5px;
+    }
+    .title_category {
+        margin-top: 20px;
+    }
+
+}
+@media (max-width: 768px) {
+    h1 {
+        font-size: 26px;
+        margin: 5px auto;
+    }
+    h2 {
+        font-size: 22px;
+        margin: 5px auto !important;
+    }
+    h3 {
+        font-size: 24px !important;
+    }
+    .aqua_zone_block p,
+    .entertainment_block p,
+    .services_block p,
+    .rent_block,
+    .description_block
+    .phone_block,
+    .add_info_block {
+        font-size: 16px;
+        margin-bottom: 5px;
+    }
+    .title_category {
+        margin-top: 10px;
+    }
+
+
+}

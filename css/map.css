@@ -1,0 +1,32 @@
+#map {
+    width: 95%;
+    height: 100vh;
+}
+.link-home {
+    display: block; /* Устанавливаем отображение как встроенный блочный элемент */
+    padding: 5px 10px; /* Добавляем немного отступов для удобства */
+    color: hsl(140, 4%, 13%);
+    background-color: #e2d1c3;
+    text-decoration: none; /* Убираем подчеркивание текста */
+    border-radius: 5px; /* Закругляем углы */
+    transition: background-color 0.3s; /* Плавный переход цвета фона */
+    font-family: "Neucha", sans-serif;
+}
+
+.link-home:hover {
+    background-color: #e68734c5; /* Цвет фона при наведении */
+    text-decoration: none; /* Убираем подчеркивание текста */
+    color: hsl(140, 4%, 13%);
+    font-family: "Neucha", sans-serif;
+}
+
+.link-home_text {
+    font-size: 1.2rem; /* Размер шрифта */
+}
+
+
+
+
+@media (max-width: 768px) {
+    
+}

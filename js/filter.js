@@ -11,12 +11,12 @@ function applyFiltersDesk(filterContainerId) {
     const city = filterContainer.querySelector('#citySelect').value;
     const district = filterContainer.querySelector('#districtSelect').value;
     const selectedTypes = getCheckedValues(filterContainer, 'saunaType');
-    const selectedViewBath = getCheckedValues(filterContainer, 'banyaType');
-    const selectedAquaZone = getCheckedValues(filterContainer, 'aquaZone');
+    const selectedViewBath = getCheckedValues(filterContainer, 'banyaType'); // тип парной
+    const selectedAquaZone = getCheckedValues(filterContainer, 'aquaZone'); 
     const selectedServices = getCheckedValues(filterContainer, 'services');
-    const selectedEntertainment = getCheckedValues(filterContainer, 'service');
-    const price = parseInt(filterContainer.querySelector('#priceRange2').value, 10);
-    const capacityInput = filterContainer.querySelector('#capacityInput2');
+    const selectedEntertainment = getCheckedValues(filterContainer, 'entertainment'); 
+    const price = parseInt(filterContainer.querySelector('#priceRange2').value, 10); 
+    const capacityInput = filterContainer.querySelector('#capacityInput2'); //вместимость
     const capacity = parseInt(capacityInput.value, 10) || null; // Получаем значение вместимости
     const parking = filterContainer.querySelector('#parkingCheck').checked;
     const barbecue = filterContainer.querySelector('#bbqCheck').checked;
