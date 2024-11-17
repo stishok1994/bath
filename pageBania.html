@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Бани Лютый пар</title>
         <!-- Bootstrap -->
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.18/dist/css/bootstrap-select.min.css">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -26,9 +26,14 @@
     <header>
         <div class="header-content">
             <div class="logo">Логотип</div>
-            <div class="">
-                <h1 class="header-title m-0">Лютый пар</h1>
-            </div>
+            <a class="linkToHome" href="index.html">
+                <div class="text-container_title">
+                    <h1 class="header-title m-0">
+                        Л<span class="red">ю</span>т<span class="red">ы</span>й п<span class="red">а</span>р
+                    </h1>
+                </div>
+            </a>
+            
         </div>
     </header>
 
@@ -57,18 +62,20 @@
                         </div>
                         <!-- Стрелки навигации -->
                         <a class="carousel-control-prev" href="#photoCarousel" role="button" data-slide="prev">
-                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <!-- <span class="carousel-control-prev-icon" aria-hidden="true"></span> -->
+                            <i class="fa-solid fa-angles-right fa-flip-horizontal fa-2xl" style="color: #000000;"></i>
                             <span class="sr-only">Предыдущая</span>
                         </a>
                         <a class="carousel-control-next" href="#photoCarousel" role="button" data-slide="next">
-                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <!-- <span class="carousel-control-next-icon" aria-hidden="true"></span> -->
+                            <i class="fa-solid fa-angles-right fa-2xl" style="color: #000000;"></i>
                             <span class="sr-only">Следующая</span>
                         </a>
                     </div>
                 </div>
     
     
-                    <div class="col-md-5">
+                    <div class="col-md-5 infoAbout_block">
                         <h3>Информация о бане</h3>
                         <p><strong >Вид парной: </strong> <span class="type_bania"></span></p>
                         <p><strong >Тип парной: </strong><span class="subtype_bania"> </span></p>
@@ -103,7 +110,7 @@
                     <!-- price -->
                     <div class="col-10 col-md-6">
                         <h3 class="title_category"><i class="fa-regular fa-money-bill-1"></i> Стоимость</h3>
-                        <p class="rent_block"></p>
+                        <p class="rent_block_cart"></p>
                     </div>
 
                     <!-- information -->
@@ -114,11 +121,11 @@
                     <!-- phone -->
                     <div class="col-4">
                         <h3 class="title_category"><i class="fa-solid fa-phone-volume"></i> Контактный телефон</h3>
-                        <p class="phone_block"><strong></strong></p>
+                        <a class="phone_block" href="tel:+7(473) 233-33-01"></a>
                     </div>
                     <!-- dop info -->
                     <div>
-                        <h3 class="title_category">Дополнительная информация</h3>
+                        <h3 class="title_category"><i class="fa-solid fa-lightbulb"></i>  Дополнительная информация</h3>
                         <ul class="add_info_block">
                             <li></li>
                         </ul>
@@ -140,6 +147,32 @@
                         
                     </div>
                 </div>
+
+                <div class="comment_blok ">
+                    <h2 class="d-flex justify-content-center">Комментарии &nbsp; <i class="fa-regular fa-comment"></i></h2>
+                    <div class="comments">
+                        <div id="comment-section">
+                            <div id="comments-container">
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="post_comment">
+                        <h3>Оставить комментарий</h3>
+                        <form id="comment-form">
+                            <label for="name">Имя:</label>
+                            <input type="text" id="name" name="name" required placeholder="Введите ваше имя">
+                            
+                            <label for="comment">Комментарий:</label>
+                            <textarea id="comment" name="comment" required placeholder="Введите ваш комментарий" rows="4"></textarea>
+                            
+                            <label id="math-question" for="math-answer"></label> 
+                            <input type="text" id="math-answer" required placeholder="Решите пример">
+                            
+                            <button class="btn_send_comment" type="submit">Отправить</button>
+                        </form>
+                    </div>
+                </div>
     
         </main>
          </div>
@@ -152,7 +185,9 @@
 
 
     <footer>
-        <p>&copy; 2024 Агрегатор бань. Все права защищены.</p>
+        <p class="btm-text-footer">&copy; 2024 Лютый пар. Все права защищены. <br>
+            Использование материалов возможно только по согласованию с правообладателями сайта.
+        </p>
     </footer>
     <!-- bootstrap -->
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
@@ -163,6 +198,7 @@
 
     <!-- My js -->
     <script src="js/getInfoCard.js"></script>
+    <script src="js/sendComment.js"></script>
     
 </body>
 </html>

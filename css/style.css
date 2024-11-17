@@ -23,6 +23,15 @@ header {
     z-index: 100;
 }
 
+.linkToHome {
+    text-decoration: none;
+    color: transparent;
+}
+.linkToHome:hover {
+    text-decoration: none; /* Убираем подчеркивание при наведении */
+    color: transparent; /* Если вы хотите оставить цвет таким же, как и в обычном состоянии */
+}
+
 /* Псевдоэлемент для затемнения фонового изображения */
 header::before {
     content: "";
@@ -49,10 +58,11 @@ header::before {
     z-index: 100;
 }
 .block_nav_mobile {
-    background-color: rgb(red, green, blue)
+    background-color: rgb(red, green, blue);
+    width: 100%;
 }
 .locat_text_nav {
-font-size: 14px;
+    font-size: 14px;
     color: hsl(140, 4%, 13%);
     font-style: italic;
     text-decoration: underline;
@@ -84,7 +94,7 @@ font-size: 14px;
 }
 
 .fixed-width {
-    width: 120px !important; /* Задание фиксированной ширины для кнопок "О нас" и "Собственникам" */
+    width: 160px !important; /* Задание фиксированной ширины для кнопок "О нас" и "Собственникам" */
     margin-right: 10px; /* Отступ между кнопками, если необходимо */
 }
 
@@ -113,9 +123,9 @@ font-size: 14px;
     background-image: linear-gradient(135deg, #D8B394 0%, #B59A7E 100%); /* Градиентный фон */
     border: none; /* Убираем границу */
     color: hsl(120, 9%, 2%) !important; /* Цвет текста */
-    padding: 3px 3px; /* Отступ внутри кнопки */
+    padding: 5px 3px; /* Отступ внутри кнопки */
     border-radius: 5px; /* Округлые края */
-    font-size: 14px; /* Размер шрифта */
+    font-size: 13px; /* Размер шрифта */
     font-weight: bold; /* Жирный шрифт */
     cursor: pointer; /* Указатель при наведении */
     transition: background-color 0.3s ease, transform 0.3s ease; /* Плавные переходы для эффектов */
@@ -170,11 +180,23 @@ font-size: 14px;
 /* Заголовок по центру */
 .header-title {
     margin-bottom: 10px;
-    font-size: 2.5rem;
+    font-size: 58px;
     font-family: "Neucha", sans-serif;
     font-weight: bold;
     color: hsl(140, 4%, 13%); 
 }
+.red {
+    color: red; /* цвет для красных букв */
+}
+.text-container_title {
+    border: 2px solid #8B4513; /* цвет рамки - коричневый (цвет древесины) */
+    border-radius: 10px; /* закругление углов */
+    background-color: #FFE4B5; /* теплый фон (цвет пшенично-бежевый) */
+    padding: 15px; /* внутренние отступы */
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1); /* легкая тень для эффекта глубины */
+    text-align: center; /* выравнивание текста по центру */
+}
+
 .select_tow_title {
     margin: 5px !important;
 }
@@ -205,7 +227,7 @@ font-size: 14px;
 }
 
 .img_top {
-    width: 80%;
+    width: 60%;
     height: auto;
 }
 
@@ -237,13 +259,114 @@ main.content {
     padding-right: 20px;
 }
 
+a {
+    text-decoration: none;
+}
+
+.btm-text-footer {
+    font-size: 16px;
+}
+
+
+/* блок рекламы */
+.img_advertis {
+    max-width: 100%;
+    height: auto;
+    margin: 5px 0 10px 0;
+
+    border-radius: 8px;
+    transition: transform 0.2s;
+}
+.img_advertis:hover {
+    transform: scale(1.05);
+}
+.gallery {
+    display: flex; /* Используем Flexbox для расположения изображений в ряд */
+    gap: 15px; /* Задаем промежуток между картинками */
+    justify-content: center; /* Центрируем изображения в контейнере */
+}
+
+.gallery img {
+    /* max-width: 100%; */
+    height: auto; /* Сохраняем пропорции изображений */
+    flex: 1 0 auto; /* Заставляем изображения занимать ровно столько места, сколько нужно, и не растягиваться */
+    object-fit: contain; /* Изображения сохранят пропорции и не обрежутся */
+}
+.img-advert_mob {
+    max-width: 45%;
+}
+
+/* Модальное окно */
+.modal {
+    display: none; /* Скрыто по умолчанию */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.modal-content {
+    margin: 15% auto;
+    display: block;
+    max-width: 60%;
+    max-height: 60%;
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 25px;
+    color: white;
+    font-size: 35px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+    /* Для мобильной */
+    .modal {
+        display: none; /* Скрыто по умолчанию */
+        position: fixed;
+        z-index: 1000;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: rgba(0, 0, 0, 0.8);
+    }
+    
+    .modal-content_mob {
+        margin: 15% auto;
+        display: block;
+        max-width: 90%;
+        max-height: 90%;
+    }
+    
+    .close {
+        position: absolute;
+        top: 10px;
+        right: 25px;
+        color: white;
+        font-size: 35px;
+        font-weight: bold;
+        cursor: pointer;
+    }
+/*  */
+
 /* Категории */
 .category {
-    margin-bottom: 40px;
+    margin-bottom: 25px;
     background-color: #f8f4e3; 
-    padding: 20px;
+    padding: 10px;
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+    max-width: 100%; /* Ограничиваем максимальную ширину секции, можно задать конкретные значения, например, 800px */
+    overflow: hidden; /* Прячем любые выходящие за границы элементы */
 }
 
 .category.others {
@@ -257,7 +380,7 @@ main.content {
 
 
 .category h2 {
-    margin-bottom: 15px;
+    margin-bottom: 5px;
     font-size: 36px;
     color: #2c5d6b; /* Темно-голубой для заголовков категорий */
 }
@@ -300,6 +423,10 @@ main.content {
 .left-btn {
     left: 10px;
 }
+.scroll-btn .left-btn,
+.scroll-btn .right-btn {
+    display: block;
+}
 
 .right-btn {
     right: 10px;
@@ -309,7 +436,8 @@ main.content {
     justify-content: center;
     margin-bottom: 10px;
 }
-.show_mobile {
+.show_mobile, 
+.show_mobile_advertis {
     display: none;
 }
 .icon-contact_my {
@@ -347,9 +475,12 @@ main.content {
 .card:hover {
     transform: scale(1.05);
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
 }
 
-
+.for_mobile_link_btn {
+    width: auto;
+}
 
 /* Фильтр */
 
@@ -383,6 +514,7 @@ main.content {
     background-color: #358c3b;
     color: white;
     border: none;
+    padding: 5px 7px;
 }
 .btn_add_filters:hover {
     background-color: #c03610;
@@ -395,7 +527,17 @@ main.content {
     border: none;
 }
 .btn_clr_filters:hover {
-    background-color: #c03610;
+    background-color: #815e54;
+    color: white;
+    border: none;
+}
+.btn_map {
+    background-color: #9e1506fd;
+    color: white;
+    border: none;
+}
+.btn_map:hover {
+    background-color: #815e54;
     color: white;
     border: none;
 }
@@ -426,6 +568,16 @@ main.content {
     cursor: pointer;
     padding: 5px 0px;
     border-radius: 5px;
+    text-decoration: none;
+}
+.rent_block {
+    background-color: #783705;
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 5px 0px;
+    border-radius: 5px;
+    text-decoration: none;
 }
 
 /*  */
@@ -519,8 +671,15 @@ h2 {
     font-size: 28px;
 }
 .block_cursor h2 {
-    margin: 0;                 /* Убираем стандартные отступы у заголовка */
-    font-size: 24;           /* Размер шрифта заголовка (по желанию) */
+    margin: 0;                 
+    font-size: 24;      
+}
+
+.line {
+    flex: 1;
+    height: 1px; /* высота линии */
+    background: linear-gradient(to right, transparent, black, transparent); /* затухание */
+    margin: 0 10px; /* отступ между линией и текстом */
 }
 /* Отступы */
 .m-0 {
@@ -544,10 +703,14 @@ h2 {
 .m_auto {
     margin: auto;
 }
+.p_5 {
+    padding: 5px;
+}
+
 
 /* Адаптивность */
 
-@media (max-width: 1080px) {
+@media (max-width: 1400px) {
     .banner-img {
         height: 200px;
         object-fit: cover;
@@ -558,6 +721,9 @@ h2 {
     }
     .block_cursor h2 {
         font-size: 24px;
+    }
+    .btm-text-footer {
+        font-size: 16px;
     }
 
 
@@ -606,8 +772,9 @@ h2 {
         justify-content: center;
         padding: 0 10px;
     }
-
-
+    .show_mobile_advertis {
+        display: block;
+    }
     .header-title {
         margin-bottom: 5px;
         font-size: 32px;
@@ -639,7 +806,7 @@ h2 {
         padding-right: 3px;
     }
     .category h2 {
-        margin-bottom: 10px;
+        margin-bottom: 0px;
         font-size: 26px;
     }
     .category {
@@ -650,6 +817,9 @@ h2 {
     .category {
         padding-top: 10px;
         padding-bottom: 10px;
+    }
+    .btm-text-footer {
+        font-size: 14px;
     }
 
 }
@@ -669,6 +839,10 @@ h2 {
     .hide_show_mobile {
         display: none;
     }
+    .fixed-width {
+        width: 150px;
+        margin-right: 10px; /* Отступ между кнопками, если необходимо */
+    }
 
 }
 
@@ -683,6 +857,19 @@ h2 {
     }
     .hide_show_mobile {
         display: none;
+    }
+
+    .hide_min_480 {
+        display: none !important;
+    }
+    .btn_color2 {
+
+        padding: 2px 2px; /* Отступ внутри кнопки */
+        border-radius: 5px; /* Округлые края */
+        font-size: 12px; /* Размер шрифта */           
+    }
+    .btm-text-footer {
+        font-size: 12px;
     }
 
 }

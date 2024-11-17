@@ -1,3 +1,5 @@
+// Прокрутка карточек
+
 document.addEventListener("DOMContentLoaded", () => {
     const scrollContainers = document.querySelectorAll('.scroll-container');
 
@@ -8,7 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const cards = cardsWrapper.querySelectorAll('.card');
 
         // Только если больше 4 карточек, активируем прокрутку
-        if (cards.length > 4) {
+        // if (cards.length > 4) {
             // Прокрутка при нажатии на кнопки
             leftBtn.addEventListener('click', () => {
                 cardsWrapper.scrollLeft -= 300; // Прокрутка влево
@@ -23,10 +25,10 @@ document.addEventListener("DOMContentLoaded", () => {
                 event.preventDefault();
                 cardsWrapper.scrollLeft += event.deltaY; // Горизонтальная прокрутка
             });
-        } else {
-            // Если карточек меньше 4, скрываем кнопки прокрутки
-            leftBtn.style.display = 'none';
-            rightBtn.style.display = 'none';
-        }
+        // } else {
+        //     // Если карточек меньше 4, скрываем кнопки прокрутки
+        //     leftBtn.style.display = 'none';
+        //     rightBtn.style.display = 'none';
+        // }
     });
 });

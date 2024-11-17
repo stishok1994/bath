@@ -1,0 +1,68 @@
+body {
+    /* font-family: 'Arial', sans-serif; */
+    font-family: "Nunito", sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f1f6f9; 
+    color: #1e1d1d;
+    justify-content: center;
+}
+
+.services-description {
+    color: #4b3e2f; /* Цвет текста - древесный */
+    background-color: #f7f2eb; /* Фон - теплый кремовый оттенок */
+    border: 2px solid #e3d4c5; /* Рамка - теплый оттенок древесины */
+    border-radius: 10px;
+    padding: 20px;
+    max-width: 800px;
+    margin: 20px auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.services-description h1 {
+    font-size: 2rem;
+    color: #5c4b3d; /* Более темный древесный цвет */
+    text-align: center;
+    margin-bottom: 15px;
+    font-family: "Nunito", sans-serif;
+}
+
+.services-description h2 {
+    font-size: 1.5rem;
+    color: #6b5845;
+    margin-top: 20px;
+}
+
+.services-description p {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin: 10px 0;
+}
+
+.services-description ul {
+    padding-left: 20px;
+    margin: 10px 0;
+}
+
+.services-description ul li {
+    margin-bottom: 10px;
+}
+
+.services-description strong {
+    color: #7a634e; /* Подчеркнутый древесный акцент */
+}
+
+.services-description a {
+    color: #d4965b; /* Цвет ссылок - теплый древесный оттенок */
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.services-description a:hover {
+    text-decoration: underline;
+    color: #c47b43; /* Цвет при наведении */
+}
+
+h1 {
+    font-family: "Neucha", sans-serif !important;
+}

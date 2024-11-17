@@ -92,6 +92,7 @@ async function fetchAndStoreBathCards() {
         // GET-запрос
         const response = await fetch(apiUrl);
         const data = await response.json();
+        // console.log(data)
 
         // первое изображение для каждой бани
         const processedData = data.menu.map(bath => ({

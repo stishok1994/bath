@@ -1,0 +1,100 @@
+.header_mobile {
+    display: block;
+    position: relative;
+    height: 100%;
+    background-image: linear-gradient(rgba(255, 255, 255, 0.61) 50%, rgba(255, 255, 255, 1) 100%), url(/img/header_backgr2.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    overflow: hidden;
+    z-index: 100;
+}
+header {
+    width: 100%;
+}
+
+.block_nav_mobile {
+    padding: 10px;
+    width: 100%;
+}
+.header_cooporation {
+    max-width: 1400px;
+}
+.text-container_title {
+    border: 2px solid #8B4513; /* цвет рамки - коричневый (цвет древесины) */
+    border-radius: 10px; /* закругление углов */
+    background-color: #FFE4B5; /* теплый фон (цвет пшенично-бежевый) */
+    padding: 15px; /* внутренние отступы */
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1); /* легкая тень для эффекта глубины */
+    text-align: center; /* выравнивание текста по центру */
+}
+.contact_block {
+  
+    border-radius: 10px; /* закругление углов */
+    background-color: #ffe4b5c3; /* теплый фон (цвет пшенично-бежевый) */
+    padding: 5px; /* внутренние отступы */
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1); /* легкая тень для эффекта глубины */
+    text-align: center; /* выравнивание текста по центру */
+}
+.header-content {
+    display: flex;
+    justify-content: space-between;
+}
+.logo {
+    position: relative;
+}
+
+/* Форма */
+body {
+    background-color: #f4f4f9;
+    /* padding: 20px; */
+}
+
+.form-container {
+    max-width: 600px;
+    margin: auto;
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 15px;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.form-text {
+    font-size: 0.9rem;
+    color: #6c757d;
+}
+
+.submit-btn {
+    width: 100%;
+    background-color: #007bff;
+    color: #fff;
+    font-weight: bold;
+}
+.btn_send_form {
+    background-color: #9f5800;
+}
+.intro-text_2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+@media (max-width: 768px) {
+    .contact_block {
+        margin-top: 5px;
+        padding: 0;
+
+    }
+}
+
+@media (max-width: 576px) {
+    .form-container {
+        padding: 15px;
+    }
+}
+
