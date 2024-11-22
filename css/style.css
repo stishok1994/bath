@@ -117,6 +117,7 @@ header::before {
     padding: 5px;
     font-size: 14px;
     border: #713303;
+    margin-bottom: 5px;
 }
 .btn_color2 {
     background-color: #D8B394; /* Светлый древесный цвет */
@@ -170,12 +171,23 @@ header::before {
 
 /* Логотип слева */
 .logo {
-    font-size: 24px;
-    font-weight: bold; /* Жирный текст для логотипа */
-    color: #f00909; /* Цвет текста логотипа (деревянный тон) */
+    /* font-size: 24px;
+    font-weight: bold; 
+    color: #f00909;  */
     position: absolute;
-    left: 20px; /* Располагаем логотип слева */
+    left: 20px; 
 }
+.logo::before {
+    content: ""; /* Создает невидимый псевдоэлемент */
+    position: absolute; /* Устанавливает абсолютное позиционирование */
+    top: 0; /* Верхний край */
+    left: 0; /* Левый край */
+    right: 0; /* Правый край */
+    bottom: 0; /* Нижний край */
+    background: radial-gradient(circle, rgba(255, 255, 255, 0) 30%, rgba(255, 255, 255, 0.1) 80%); /* Радиальный градиент */
+    pointer-events: none; /* Игнорирует события мыши */
+}
+
 
 /* Заголовок по центру */
 .header-title {
@@ -195,6 +207,14 @@ header::before {
     padding: 15px; /* внутренние отступы */
     box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1); /* легкая тень для эффекта глубины */
     text-align: center; /* выравнивание текста по центру */
+}
+.container_title_mob {
+    border: 2px solid #8B4513; /* цвет рамки - коричневый (цвет древесины) */
+    border-radius: 10px; /* закругление углов */
+    background-color: #FFE4B5; /* теплый фон (цвет пшенично-бежевый) */
+    padding: 3px; /* внутренние отступы */
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1); /* легкая тень для эффекта глубины */
+    text-align: center; /* выравнивание текста по центру */  
 }
 
 .select_tow_title {
@@ -227,7 +247,12 @@ header::before {
 }
 
 .img_top {
-    width: 60%;
+    width: 50%;
+    height: auto;
+}
+
+#img_top_mob {
+    width: 70% !important;
     height: auto;
 }
 
@@ -237,6 +262,14 @@ aside.filters {
     background-color: #e2d1c3; /* Светло-коричневый тон для фона фильтров */
     border-radius: 10px;
     padding: 20px;
+}
+.logo1 {
+    width: 200px;
+    height: auto;
+}
+.logo1_mob {
+    width: 150px;
+    height: 91px;
 }
 
 .filters h2 {
@@ -268,7 +301,7 @@ a {
 }
 
 
-/* блок рекламы */
+                                            /* блок рекламы */
 .img_advertis {
     max-width: 100%;
     height: auto;
@@ -325,6 +358,8 @@ a {
     font-weight: bold;
     cursor: pointer;
 }
+
+                                                    /*  */
 
     /* Для мобильной */
     .modal {
@@ -395,59 +430,119 @@ a {
     border-radius: 10px;
 }
 
+/* Настройка прокрутки */
+
+        /* .cards-wrapper {
+            display: flex;
+            gap: 15px;
+            overflow-x: scroll;
+            padding: 10px;
+            scroll-behavior: smooth;
+        }
+
+        .scroll-btn {
+            position: absolute;
+            background-color: #7a5c3f;
+            color: #fff;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            z-index: 1;
+            border-radius: 50%;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s ease;
+        }
+
+        .scroll-btn:hover {
+            background-color: #5c3f2b;
+        }
+
+        .left-btn {
+            left: 10px;
+        }
+        .scroll-btn .left-btn,
+        .scroll-btn .right-btn {
+            display: block;
+        }
+
+        .right-btn {
+            right: 10px;
+        } */
+
+/* Открываем прокрутку в горизонтальном направлении */
 .cards-wrapper {
-    display: flex;
-    gap: 15px;
-    overflow-x: scroll;
-    padding: 10px;
-    scroll-behavior: smooth;
+    display: flex; /* Отображает карточки в строке */
+    overflow-x: auto; /* Позволяет горизонтальную прокрутку */
+    scroll-behavior: smooth; /* Плавная прокрутка */
+    padding: 10px; /* Внутренние отступы */
+    scrollbar-width: thin; /* Устанавливает ширину полосы прокрутки в Firefox */
+    gap: 10px;
 }
 
+/* Настройки для WebKit-браузеров (Chrome, Safari) */
+.cards-wrapper::-webkit-scrollbar {
+    height: 12px; /* Высота полосы прокрутки */
+}
+
+.cards-wrapper::-webkit-scrollbar-track {
+    background: #f1f1f1; /* Цвет фона полосы прокрутки */
+}
+
+.cards-wrapper::-webkit-scrollbar-thumb {
+    background: #3498db; /* Цвет ползунка */
+    border-radius: 10px; /* Закругление углов ползунка */
+}
+
+/* Добавит эффект при наведении курсора на ползунок */
+.cards-wrapper::-webkit-scrollbar-thumb:hover {
+    background: #2980b9; /* Цвет ползунка при наведении */
+}
+
+/* Настройки для Firefox */
+.cards-wrapper {
+    scrollbar-color: #3498db #f1f1f1; /* Цвет ползунка и цвета полосы прокрутки */
+}
+
+/* Кнопки прокрутки */
 .scroll-btn {
-    position: absolute;
-    background-color: #7a5c3f; /* Тон кнопок прокрутки */
-    color: #fff;
+    background-color: #3498db; /* Цвет кнопок */
+    color: white; /* Цвет текста кнопок */
     border: none;
-    padding: 10px;
     cursor: pointer;
-    z-index: 1;
-    border-radius: 50%;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    transition: background-color 0.3s ease;
+    padding: 10px; /* Отступ кнопок */
+    border-radius: 20%;
 }
 
-.scroll-btn:hover {
-    background-color: #5c3f2b;
-}
+/* конец прокрутки */
 
-.left-btn {
-    left: 10px;
-}
-.scroll-btn .left-btn,
-.scroll-btn .right-btn {
-    display: block;
-}
 
-.right-btn {
-    right: 10px;
-}
+
+
+
+
+
+
+
 .img-top_block {
     display: flex;
     justify-content: center;
+    align-items: center;
     margin-bottom: 10px;
 }
 .show_mobile, 
 .show_mobile_advertis {
     display: none;
 }
+
+.show_mobile_advertis {
+    border: 2px solid #883701;
+}
 .icon-contact_my {
-    font-size: 32px !important;
+    font-size: 36px !important;
 }
 .main_block {
    padding: 0 20px 10px; 
 }
-
-
 
 /* Карточки */
 .card {
@@ -462,7 +557,9 @@ a {
     height: 100%;
     
 }
-
+.cart_bania {
+    margin-bottom: 10px;
+}
 .others .card {
     /* background-color: #fff; */
     border-radius: 8px;
@@ -706,6 +803,12 @@ h2 {
 .p_5 {
     padding: 5px;
 }
+.ml-3px {
+    margin-left: 3px;
+}
+.m-0 {
+    margin: 0;
+}
 
 
 /* Адаптивность */
@@ -774,6 +877,8 @@ h2 {
     }
     .show_mobile_advertis {
         display: block;
+        background-color:#1acae6ce
+        
     }
     .header-title {
         margin-bottom: 5px;
@@ -843,6 +948,15 @@ h2 {
         width: 150px;
         margin-right: 10px; /* Отступ между кнопками, если необходимо */
     }
+    #img_top_mob {
+        padding-left: 40px;
+        width: 60% !important;
+        height: auto;
+    }
+    .logo1_mob {
+        width: 100px;
+        height: 61px;
+    }
 
 }
 
@@ -871,5 +985,75 @@ h2 {
     .btm-text-footer {
         font-size: 12px;
     }
-
+    .cart_bania {
+        margin-bottom: 7px;
+        padding: 5px;
+        
+    }
+    .cards-wrapper {
+        gap: 7px;
+    }
+    .category .show_mobile_advertis {
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+    .p_3 {
+        padding: 3px;
+    }
+}
+@media (max-width: 350px) {
+    .header-title {
+        font-size: 22px;
+    }
+    .btn_color2 {
+        padding: 1px 1px;
+        border-radius: 5px;
+        font-size: 9px;
+    }
+    .btn_filter {
+        font-size: 12px;
+        padding: 3px;
+    }
+    .offcanvas-header, .offcanvas-body {
+        width: 250px;
+    }
+    .icon-contact_my {
+        font-size: 24px !important;
+    }
+    .locat_text_nav {
+        font-size: 11px;
+    }
+    element.style {
+        font-size: 16px !important;
+    }
+    .category h2 {
+        font-size: 22px;
+    }
+    .cart_bania {
+        margin-bottom: 5px;
+        padding: 5px;
+    }
+    .cards-wrapper {
+        gap: 5px;
+    }
+    .p_low_2 {
+        padding: 2px;
+    }
+    #img_top_mob {
+        padding-left: 30px;
+        width: 70% !important;
+        height: auto;
+    }
+    .logo1_mob {
+        width: 80px;
+        height: 49px;
+    }
+    .container_title_mob {
+        border: 2px solid #8B4513; /* цвет рамки - коричневый (цвет древесины) */
+        border-radius: 5px; /* закругление углов */
+        background-color: #FFE4B5; /* теплый фон (цвет пшенично-бежевый) */
+        padding: 0px; /* внутренние отступы */
+        box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1); /* легкая тень для эффекта глубины */
+        text-align: center; /* выравнивание текста по центру */  
+    }
 }

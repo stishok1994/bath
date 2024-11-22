@@ -97,6 +97,16 @@ ul {
     color: #1e1d1d;
 }
 
+.contact-phone-container {
+    border: 2px solid #3498db; /* Цвет и ширина рамки */
+    background-color: #ffffff; /* Цвет фона блока */
+    padding: 10px; /* Внутренние отступы */
+    border-radius: 8px; /* Закругление углов */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Тень под блоком */
+    text-align: center; /* Центрирование текста внутри блока */
+    margin-top: 10px;
+}
+
 
 /* Comment Form */
 #comment-section {
@@ -337,6 +347,20 @@ ul {
     
     .comment-text {
         font-size: 14px;
+    }
+    h3 {
+        font-size: 18px !important;
+    }
+    .aqua_zone_block p,
+    .entertainment_block p,
+    .services_block p,
+    .rent_block_cart,
+    .description_block,
+    .phone_block,
+    .add_info_block,
+    .infoAbout_block p {
+        font-size: 16px;
+        margin-bottom: 5px;
     }
 
 

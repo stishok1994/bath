@@ -28,7 +28,8 @@
 <body>
     <header>
         <div class="header-content hide_show_mobile">
-            <div class="logo">Логотип</div>
+            <div class="logo wobble-hor-bottom"><img class="logo1" src="img/Logo1_2.png" alt=""></div>
+                
             <!-- <div>
                 <h1 class="header-title m-0">Лютый пар</h1>
             </div> -->
@@ -43,29 +44,40 @@
     <!-- for mobile -->
      <div class="header_mobile ">
         <!-- img mobile -->
-        <div class="img-top_block show_mobile swing-in-top-fwd mb-3 ">
-            <img class="img_top" src="img/logo2.png" alt="">
+        <div class="img-top_block show_mobile">
+            <div class="row">
+                <div class="col-3 d-flex justify-content-start align-items-center wobble-hor-bottom">
+                    <img  class="logo1_mob" src="img/Logo1_2.png" alt="">
+                </div>
+                <div class="col-9 p-0 swing-in-top-fwd">
+                    <img id="img_top_mob"  class="img_top" src="img/logo3_1.png" alt="">
+                </div>
+            </div>
+            
+            
         </div>
 
         <!-- nav mobile -->
         <div class="show_mobile block_nav_mobile">
             <div class="row d-flex justify-content-between">
-                <div class="col-3 p_5"><i class="fa-solid fa-location-dot" style="color: #e40707; font-size: 24px;" aria-hidden="true"></i><span class="locat_text_nav"> Воронеж</span></div>
-                <div class="col-6 d-flex justify-content-center"><h1 class="header-title m-0">Л<span class="red">ю</span>т<span class="red">ы</span>й п<span class="red">а</span>р</h1></div>
-                <div class="col-3 d-flex justify-content-end">
+                <div class="col-3 p_5"><i class="fa-solid fa-location-dot" style="color: #e40707;" aria-hidden="true"></i><span class="locat_text_nav"> Воронеж</span></div>
+                <div class="col-5 d-flex justify-content-center p_3 container_title_mob">
+                    <div><h1 class="header-title m-0">Л<span class="red">ю</span>т<span class="red">ы</span>й п<span class="red">а</span>р</h1></div>
+                </div>
+                <div class="col-3 d-flex justify-content-end ml-3px">
                     <!-- contact -->
-                    <div class="d-flex justify-content-center mb-3 row">
-                        <div class="col-4 d-flex justify-content-center p_5">
-                            <a href="https://wa.me/9009614371" target="_blank" rel="noopener noreferrer">
+                    <div class="d-flex justify-content-center row">
+                        <div class="col-4 d-flex justify-content-center">
+                            <a href="https://wa.me/79009614371" target="_blank" rel="noopener noreferrer">
                                 <i class="fa-brands fa-whatsapp icon-contact icon-contact_my block_cursor p_5" style="color: #25cb28;"></i>
                             </a>
                         </div>
-                        <div class="col-4 d-flex justify-content-center p_5">
-                            <a href="https://t.me/9009614371" target="_blank" rel="noopener noreferrer">
+                        <div class="col-4 d-flex justify-content-center">
+                            <a href="https://t.me/+79009614371" target="_blank" rel="noopener noreferrer">
                                 <i class="fa-brands fa-telegram icon-contact icon-contact_my block_cursor p_5" style="color: #2470f5;"></i>
                             </a>
                         </div>
-                        <div class="col-4 d-flex justify-content-center p_5">
+                        <div class="col-4 d-flex justify-content-center">
                             <a href="https://vk.com/lyutpar" target="_blank" rel="noopener noreferrer">
                                 <i class="fa-brands fa-vk icon-contact icon-contact_my block_cursor p_5" style="color: #0443ae;"></i>
                             </a>
@@ -347,7 +359,7 @@
                     <button id="btn_service" class="btn btn_flex btn_nav btn-primary btn_color2">Услуги</button>
                     <button id="btn_delivery" class="btn btn_flex btn_nav btn-primary btn_color2">Доставка</button>
                 </div>
-                <div class="button-row d-flex justify-content-center mt-3">
+                <div class="button-row d-flex justify-content-center">
                     <a href="about.html" id="btn_about_our" class="btn btn_nav btn-primary fixed-width btn_color2 btn_color3">
                         <i class="fa-solid fa-address-book me-2"></i> О нас
                     </a>
@@ -360,7 +372,7 @@
                 </div>
             </div>
 
-            <button class="btn btn_nav btn-secondary d-md-none btn_open_filters mb-3" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasFilters" aria-controls="offcanvasFilters">
+            <button class="btn btn_nav btn-secondary d-md-none btn_open_filters btn_filter" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasFilters" aria-controls="offcanvasFilters">
                 <i class="fa-solid fa-bars"></i> Фильтр
             </button>
         </div>
@@ -618,12 +630,12 @@
                     <!-- contact -->
                     <div class="block_margin_t_b d-flex justify-content-center mb-3 row">
                         <div class="col-4 d-flex justify-content-center p_5">
-                            <a href="https://wa.me/9009614371" target="_blank" rel="noopener noreferrer">
+                            <a href="https://wa.me/79009614371" target="_blank" rel="noopener noreferrer">
                                 <i class="fa-brands fa-whatsapp icon-contact icon-contact_my block_cursor p_5" style="color: #25cb28;"></i>
                             </a>
                         </div>
                         <div class="col-4 d-flex justify-content-center p_5">
-                            <a href="https://t.me/9009614371" target="_blank" rel="noopener noreferrer">
+                            <a href="https://t.me/+79009614371" target="_blank" rel="noopener noreferrer">
                                 <i class="fa-brands fa-telegram icon-contact icon-contact_my block_cursor p_5" style="color: #2470f5;"></i>
                             </a>
                         </div>
@@ -678,7 +690,7 @@
 
             <!-- img block -->
              <div class="img-top_block hide_show_mobile mb-3 ">
-                <img class="img_top swing-in-top-fwd" src="img/logo2.png" alt="">
+                <img class="img_top swing-in-top-fwd" src="img/logo3_1.png" alt="">
              </div>
 
             <!-- Block Top -->
@@ -710,6 +722,7 @@
             </section>
 
             <!-- Advertising -->
+
             <section class="category show_mobile_advertis">
                 <h3 class="recomend-title">Может быть интересно</h3>
                 <div class="gallery">
@@ -717,7 +730,7 @@
                     <img class="img-advert_mob" src='img/advertising2.jpg' alt="Реклама 2" onclick="openModal_mob(this.src)">
                 </div>
             </section>
-            
+                        
                 <!-- Модальное окно -->
                 <div id="myModal_mob" class="modal">
                     <span class="close" onclick="closeModal_mob()">&times;</span>

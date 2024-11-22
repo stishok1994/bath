@@ -8,7 +8,7 @@ const apiUrl = 'https://all-baths.tw1.ru/catalog/'
 function createBathCard(bath) {
     // Создаем блок col с классами для адаптивности
     const colDiv = document.createElement("div");
-    colDiv.className = "col-6 col-md-4 col-lg-3 mb-4 p_low";
+    colDiv.className = "col-6 col-md-4 col-lg-3 cart_bania p_low";
 
     // Создаем основную карточку
     const cardDiv = document.createElement("div");
