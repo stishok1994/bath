@@ -19,6 +19,7 @@ function createBathCard(bath) {
     idField.style.display = "none";
     idField.className="id-card";
     idField.textContent = bath.id;
+        // Открываем карточку бани
     cardDiv.setAttribute("onclick", `openCard(${bath.id})`);
 
     // Создаем и добавляем элементы карточки
@@ -26,7 +27,7 @@ function createBathCard(bath) {
     img.className = "bath-image";
     img.src = bath.images[0] // || "путь_к_запасному_изображению";
     img.alt = bath.name;
-    console.log(bath.images[0])
+    // console.log(bath.images[0])
 
     const title = document.createElement("h3");
     title.textContent = bath.name;
@@ -113,3 +114,4 @@ async function fetchAndStoreBathCards() {
 
 // Инициализация: загружаем данные из API
 fetchAndStoreBathCards()
+

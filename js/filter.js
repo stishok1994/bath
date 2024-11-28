@@ -105,8 +105,6 @@ function applyFiltersMobile(filterContainerId) {
 
 }
 
-
-
 // Функция для отображения карточек
 function displayBathCardsFilt(cards) {
     const cardsBox = document.querySelector('.blok-others-cards');
@@ -127,6 +125,7 @@ function displayBathCardsFilt(cards) {
             </div>
         `;
         cardsBox.appendChild(cardElement);
+        cardElement.setAttribute("onclick", `openCard(${card.id})`);
     });
 }
 
@@ -141,3 +140,9 @@ document.getElementById('applyFiltersMobile').addEventListener('click', function
     event.preventDefault(); // Предотвращаем перезагрузку страницы
     applyFiltersMobile('filterBlockMobile');
 });
+
+
+
+
+
+

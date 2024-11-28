@@ -178,14 +178,14 @@ header::before {
     left: 20px; 
 }
 .logo::before {
-    content: ""; /* Создает невидимый псевдоэлемент */
-    position: absolute; /* Устанавливает абсолютное позиционирование */
-    top: 0; /* Верхний край */
-    left: 0; /* Левый край */
-    right: 0; /* Правый край */
-    bottom: 0; /* Нижний край */
-    background: radial-gradient(circle, rgba(255, 255, 255, 0) 30%, rgba(255, 255, 255, 0.1) 80%); /* Радиальный градиент */
-    pointer-events: none; /* Игнорирует события мыши */
+    /* content: "";  */
+    position: absolute; 
+    top: 0; 
+    left: 0; 
+    right: 0; 
+    bottom: 0; 
+    background: radial-gradient(circle, rgba(255, 255, 255, 0) 30%, rgba(255, 255, 255, 0.1) 80%); 
+    pointer-events: none;
 }
 
 
@@ -196,6 +196,15 @@ header::before {
     font-family: "Neucha", sans-serif;
     font-weight: bold;
     color: hsl(140, 4%, 13%); 
+}
+.header-title_pos {
+    position: absolute; 
+    bottom: 10px; 
+    left: 50%; 
+    transform: translateX(-50%); 
+    color: white;
+    background-color: rgba(0, 0, 0, 0.5); 
+    padding: 10px;
 }
 .red {
     color: red; /* цвет для красных букв */
@@ -212,7 +221,7 @@ header::before {
     border: 2px solid #8B4513; /* цвет рамки - коричневый (цвет древесины) */
     border-radius: 10px; /* закругление углов */
     background-color: #FFE4B5; /* теплый фон (цвет пшенично-бежевый) */
-    padding: 3px; /* внутренние отступы */
+    padding: 3px 10px; /* внутренние отступы */
     box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1); /* легкая тень для эффекта глубины */
     text-align: center; /* выравнивание текста по центру */  
 }
@@ -252,7 +261,7 @@ header::before {
 }
 
 #img_top_mob {
-    width: 70% !important;
+    width: 90% !important;
     height: auto;
 }
 
@@ -527,7 +536,7 @@ a {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-bottom: 10px;
+    margin-bottom: 5px;
 }
 .show_mobile, 
 .show_mobile_advertis {
@@ -882,7 +891,7 @@ h2 {
     }
     .header-title {
         margin-bottom: 5px;
-        font-size: 32px;
+        font-size: 48px;
     }
     .header_mobile {
         display: block;
@@ -949,13 +958,16 @@ h2 {
         margin-right: 10px; /* Отступ между кнопками, если необходимо */
     }
     #img_top_mob {
-        padding-left: 40px;
-        width: 60% !important;
+        /* padding-left: 30px; */
+        width: 80% !important;
         height: auto;
     }
     .logo1_mob {
         width: 100px;
         height: 61px;
+    }
+    .header-title {
+        font-size: 42px;
     }
 
 }
@@ -1000,6 +1012,9 @@ h2 {
     .p_3 {
         padding: 3px;
     }
+    .header-title {
+        font-size: 32px;
+    }
 }
 @media (max-width: 350px) {
     .header-title {
@@ -1040,8 +1055,8 @@ h2 {
         padding: 2px;
     }
     #img_top_mob {
-        padding-left: 30px;
-        width: 70% !important;
+        /* padding-left: 30px; */
+        width: 90% !important;
         height: auto;
     }
     .logo1_mob {
@@ -1055,5 +1070,9 @@ h2 {
         padding: 0px; /* внутренние отступы */
         box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1); /* легкая тень для эффекта глубины */
         text-align: center; /* выравнивание текста по центру */  
+    }
+    .header-title_pos {
+        bottom: 5px; 
+        padding: 3px;
     }
 }

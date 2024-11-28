@@ -34,6 +34,7 @@
                 </div>
             `;
             cardsBox.appendChild(cardElement);
+            cardElement.setAttribute("onclick", `openCard(${card.id})`);
         });
     }
 

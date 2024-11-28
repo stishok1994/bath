@@ -72,7 +72,27 @@ document.addEventListener('DOMContentLoaded', function () {
                 // Описание
                 document.querySelector('.rent_block_cart').textContent = data.rent;
                 document.querySelector('.description_block').textContent = data.description;
-                document.querySelector('.add_info_block').textContent = data.add_info;
+
+                // Дополнительная информация
+                const addInfoBlock = document.querySelector('.add_info_block');
+                addInfoBlock.innerHTML = ''; // Очистка перед добавлением
+
+                // Проверка значений и добавление соответствующих строк
+                if (data.banquet_hall) {
+                    addInfoBlock.innerHTML += '<li>Банкетный зал</li>';
+                }
+                if (data.barbecue) {
+                    addInfoBlock.innerHTML += '<li>Мангал</li>';
+                }
+                if (data.own_food) {
+                    addInfoBlock.innerHTML += '<li>Еда с собой</li>';
+                }
+                if (data.parking) {
+                    addInfoBlock.innerHTML += '<li>Парковка</li>';
+                }
+
+
+                // document.querySelector('.add_info_block').textContent = data.add_info;
                 const phoneBlock = document.querySelector('.phone_block');
                 phoneBlock.textContent = data.phone; // Устанавливаем текст
                 // Устанавливаем атрибут href для звонка
@@ -123,45 +143,3 @@ document.addEventListener('DOMContentLoaded', function () {
                     }
                 });
 
-
-            // // КОММЕНТАРИИ
-            //     function displayComments() {
-            //         const commentsContainer = document.getElementById('comments-container');
-            //         commentsContainer.innerHTML = ''; // Очистка контейнера перед добавлением
-        
-            //         comments.forEach(comment => {
-            //             const commentDiv = document.createElement('div');
-            //             commentDiv.className = 'comment';
-        
-            //             const nameDiv = document.createElement('div');
-            //             nameDiv.className = 'comment-name';
-            //             nameDiv.textContent = comment.name;
-        
-            //             const textDiv = document.createElement('div');
-            //             textDiv.className = 'comment-text';
-            //             textDiv.textContent = comment.comment;
-        
-            //             commentDiv.appendChild(nameDiv);
-            //             commentDiv.appendChild(textDiv);
-            //             commentsContainer.appendChild(commentDiv);
-            //         });
-            //     }
-            //     document.getElementById('comment-form').addEventListener('submit', function(event) {
-            //         event.preventDefault(); // Предотвращаем стандартное поведение формы
-        
-            //         // Получаем значения из формы
-            //         const name = document.getElementById('name').value;
-            //         const commentText = document.getElementById('comment').value;
-        
-            //         // Добавляем новый комментарий
-            //         comments.push({ name, comment: commentText });
-        
-            //         // Вызов функции для отображения комментариев
-            //         displayComments();
-        
-            //         // Очистка формы
-            //         document.getElementById('comment-form').reset();
-            //     });
-        
-            //     // Изначально отображаем комментарии
-            //     displayComments();
