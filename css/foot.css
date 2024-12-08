@@ -1,0 +1,50 @@
+
+.container {
+    display: flex;
+    flex-direction: column; /* Расположение в один столбец */
+    gap: 10px; /* Промежуток между элементами */
+    padding: 10px; /* Поля вокруг контейнера */
+}
+
+.price-header {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.price-header_dop {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: bold;
+    margin: 0 !important;
+}
+
+.price-header, .crabs, .shrimps, .crabs_2, .contacts, .footer-note {
+    background-color: #f9f9f9; /* Цвет фона для каждого блока */
+    border: 1px solid #ddd; /* Рамка вокруг блоков */
+    border-radius: 8px; /* Скругление углов */
+    padding: 5px; /* Внутренние отступы */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Тень для блоков */
+}
+.section-title {
+    color: #d2691e;
+    font-size: 1.5rem;
+    margin-top: 5px;
+    text-transform: uppercase;
+}
+.note {
+    font-size: 0.9rem;
+    color: #8b4513;
+}
+.contacts {
+    margin-top: 20px;
+    text-align: center;
+    font-weight: bold;
+}
+.footer-note_2 {
+    text-align: center;
+    font-size: 0.8rem;
+    color: #8b4513;
+    margin-top: 10px;
+}

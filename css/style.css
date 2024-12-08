@@ -23,6 +23,28 @@ header {
     z-index: 100;
 }
 
+/* Стили для кнопки возврата наверх */
+    #btn_to_top {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        display: none; 
+        padding: 10px 15px;
+        background-color: #8B4513;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 18px;
+        z-index: 100;
+    }
+
+        /* Отображение кнопки при прокрутке */
+        #btn_to_top.show {
+            display: block;
+        }
+
+
 .linkToHome {
     text-decoration: none;
     color: transparent;
@@ -31,6 +53,9 @@ header {
     text-decoration: none; /* Убираем подчеркивание при наведении */
     color: transparent; /* Если вы хотите оставить цвет таким же, как и в обычном состоянии */
 }
+
+
+
 
 /* Псевдоэлемент для затемнения фонового изображения */
 header::before {
@@ -439,51 +464,13 @@ a {
     border-radius: 10px;
 }
 
-/* Настройка прокрутки */
-
-        /* .cards-wrapper {
-            display: flex;
-            gap: 15px;
-            overflow-x: scroll;
-            padding: 10px;
-            scroll-behavior: smooth;
-        }
-
-        .scroll-btn {
-            position: absolute;
-            background-color: #7a5c3f;
-            color: #fff;
-            border: none;
-            padding: 10px;
-            cursor: pointer;
-            z-index: 1;
-            border-radius: 50%;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-            transition: background-color 0.3s ease;
-        }
-
-        .scroll-btn:hover {
-            background-color: #5c3f2b;
-        }
-
-        .left-btn {
-            left: 10px;
-        }
-        .scroll-btn .left-btn,
-        .scroll-btn .right-btn {
-            display: block;
-        }
-
-        .right-btn {
-            right: 10px;
-        } */
 
 /* Открываем прокрутку в горизонтальном направлении */
 .cards-wrapper {
     display: flex; /* Отображает карточки в строке */
     overflow-x: auto; /* Позволяет горизонтальную прокрутку */
     scroll-behavior: smooth; /* Плавная прокрутка */
-    padding: 10px; /* Внутренние отступы */
+    padding: 5px; /* Внутренние отступы */
     scrollbar-width: thin; /* Устанавливает ширину полосы прокрутки в Firefox */
     gap: 10px;
 }
@@ -523,11 +510,6 @@ a {
 }
 
 /* конец прокрутки */
-
-
-
-
-
 
 
 
@@ -990,7 +972,7 @@ h2 {
     }
     .btn_color2 {
 
-        padding: 2px 2px; /* Отступ внутри кнопки */
+        padding: 4px 2px; /* Отступ внутри кнопки */
         border-radius: 5px; /* Округлые края */
         font-size: 12px; /* Размер шрифта */           
     }
@@ -999,7 +981,7 @@ h2 {
     }
     .cart_bania {
         margin-bottom: 7px;
-        padding: 5px;
+        padding: 2px;
         
     }
     .cards-wrapper {

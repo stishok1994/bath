@@ -1,7 +1,6 @@
 // Получаем весь список бань
 
 // URL для бань Воронежа
-// const apiUrl = 'http://90.156.208.220:8880/catalog/?city=Воронеж';
 const apiUrl = 'https://all-baths.tw1.ru/catalog/'
 
 // Функция для создания карточки на основе данных

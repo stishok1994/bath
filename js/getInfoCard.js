@@ -5,20 +5,19 @@ document.addEventListener('DOMContentLoaded', function () {
     const urlParams = new URLSearchParams(window.location.search);
     const id = urlParams.get('id');
     const urlId = `https://all-baths.tw1.ru/catalog/${id}/`
-    console.log(urlId)
+    // console.log(urlId)
 
     if (id) {
         fetch(urlId)
             .then(response => {
-                // console.log(id)
-                console.log(response)
+                // console.log(response)
                 if (!response.ok) {
                     throw new Error('Network response был неудачным');
                 }
                 return response.json();
             })
             .then(data => {
-                console.log(data)
+                // console.log(data)
                 // Вставка данных в HTML
                 document.querySelector('.name_bania').textContent = data.name;
                 
