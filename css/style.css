@@ -15,7 +15,7 @@ header {
     height: 100%; /* Высота блока */
     background-image: 
         linear-gradient(rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 1) 100%), 
-        url('/img/header_backgr2.jpg'); 
+        url('header_backgr2.jpg'); 
     background-size: cover; /* Изображение заполняет блок */
     background-position: center; /* Центрируем изображение */
     background-repeat: no-repeat; /* Изображение не повторяется */
@@ -75,7 +75,7 @@ header::before {
     height: 100%; /* Высота блока */
     background-image: 
         linear-gradient(rgba(255, 255, 255, 0.61) 50%, rgba(255, 255, 255, 1) 100%), 
-        url('/img/header_backgr2.jpg'); 
+        url('header_backgr2.jpg'); 
     background-size: cover; /* Изображение заполняет блок */
     background-position: center; /* Центрируем изображение */
     background-repeat: no-repeat; /* Изображение не повторяется */
